@@ -1,0 +1,1 @@
+TODO: Put together a rough breakdown of existing ideas
