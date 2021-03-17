@@ -1,5 +1,7 @@
 ﻿l_english:
+ CANT_SLACKEN_TOO_LOW:0 "Slacken recruitment is disabled in this mod. Use the decision as an alternative."
  mmr_cavalry_primacy:0 "Cavalry Primacy"
  mmr_cavalry_primacy_desc:0 "Nobles must lead from the front, and when they do so they must tower over the expendable masses that surround them. However, to make our armies truly elite, we must increase the ratio of true knights in our army."
  mmr_charge_the_flanks:0 "Charge the Flanks"
  mmr_charge_the_flanks_desc:0 "In an age of cannons, charging from the front is becoming an increasingly less viable tactic. Instead, we should focus on our cavalry coming in from the flanks and taking out the artillery from behind."
+ 
