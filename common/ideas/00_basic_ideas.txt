@@ -19,18 +19,20 @@ aristocracy_ideas = {
 	}
 	
 	noble_knights = {
-		cavalry_power = 0.10
-		cavalry_cost = -0.10
+		# Buffed both modifiers from 0.1 to 0.2
+		cavalry_power = 0.20
+		cavalry_cost = -0.20
 	}
 	military_traditions = {
 		mil_tech_cost_modifier  = -0.1
 	}
 	local_nobility = {
-		global_autonomy = -0.025
-		yearly_absolutism = 0.5
+		# Used to give autonomy and absolutism.
+		cav_to_inf_ratio = 0.1
 	}
 	serfdom = {
-		global_manpower_modifier = 0.33
+		# Nerfed from 0.33
+		global_manpower_modifier = 0.2
 	}
 	noble_officers = {
 		army_tradition_decay = -0.01
@@ -41,7 +43,8 @@ aristocracy_ideas = {
 		free_leader_pool = 1
 	}
 	noble_resilience = {
-		mercenary_manpower = 0.20
+		# Used to give merc manpower
+		cavalry_flanking = 1.0
 	}
 	
 
@@ -300,7 +303,8 @@ offensive_ideas = {
 		siege_ability = 0.20
 	}
 	grand_army = {
-		land_forcelimit_modifier = 0.2
+		# Nerfed from 0.2
+		land_forcelimit_modifier = 0.1
 	}
 	napoleonic_warfare = {
 		discipline = 0.05
@@ -398,7 +402,8 @@ economic_ideas = {
 	category = ADM
 
 	bonus = {
-		development_cost = -0.2
+		# Nerfed from 0.2
+		development_cost = -0.1
 	}
 
 	bureaucracy = {
@@ -742,10 +747,12 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.50
+		# Nerfed from 0.5
+		land_forcelimit_modifier  = 0.30
 	}
 	mass_army = {
-		global_manpower_modifier = 0.50
+		# Nerfed from 0.5
+		global_manpower_modifier = 0.30
 	}
 	the_young_can_serve = {
 		manpower_recovery_speed = 0.20
