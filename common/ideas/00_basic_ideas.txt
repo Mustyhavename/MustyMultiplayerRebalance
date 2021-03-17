@@ -26,7 +26,7 @@ aristocracy_ideas = {
 	military_traditions = {
 		mil_tech_cost_modifier  = -0.1
 	}
-	local_nobility = {
+	mmr_cavalry_primacy = {
 		# Used to give autonomy and absolutism.
 		cav_to_inf_ratio = 0.1
 	}
@@ -42,7 +42,7 @@ aristocracy_ideas = {
 		diplomats = 1
 		free_leader_pool = 1
 	}
-	noble_resilience = {
+	mmr_charge_the_flanks = {
 		# Used to give merc manpower
 		cavalry_flanking = 1.0
 	}
