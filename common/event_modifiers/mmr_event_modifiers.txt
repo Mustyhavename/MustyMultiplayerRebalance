@@ -1,0 +1,11 @@
+
+# Under normal circumstances, a nation recovers 100% of its manpower pool over 10 years.
+# The standard slacken button gives back 20% of the normal manpower gain over this period for 5% professionalism.
+# The decision has the modifier take 5 year and is balanced to double manpower regen for the effective cost of 10% professionalism,
+# meaning it effectively gives 50% manpower for 10% professionalism, so it gives slightly more than slacken but is spread out.
+# The only downside to this is that vanilla slacken benefits from any other manpower recovery gain modifiers whereas this will not.
+
+mmr_slacken_replacement_modifier = {
+	manpower_recovery_speed = 1.0
+	yearly_army_professionalism = -0.02
+}

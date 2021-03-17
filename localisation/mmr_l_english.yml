@@ -4,4 +4,7 @@
  mmr_cavalry_primacy_desc:0 "Nobles must lead from the front, and when they do so they must tower over the expendable masses that surround them. However, to make our armies truly elite, we must increase the ratio of true knights in our army."
  mmr_charge_the_flanks:0 "Charge the Flanks"
  mmr_charge_the_flanks_desc:0 "In an age of cannons, charging from the front is becoming an increasingly less viable tactic. Instead, we should focus on our cavalry coming in from the flanks and taking out the artillery from behind."
- 
+ mmr_slacken_replacement_modifier:0 "Slackened Recruitment"
+ desc_mmr_slacken_replacement_modifier:0 "Our recruiting standards have been temporarily eased. This has given us a boon in new recruits to replenish our numbers, but is having a detrimental effect on our army quality."
+ mmr_slacken_replacement_enable_title:0 "Slacken Recruiting Standards"
+ mmr_slacken_replacement_enable_desc:0 "Our army has professional standards which means many recruits do not make the grade. To ease manpower issues we can lower these standards, but this will have a detrimental affect on army quality."

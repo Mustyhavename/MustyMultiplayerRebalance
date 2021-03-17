@@ -1,0 +1,30 @@
+country_decisions = {
+	
+	# This decision is taken as a replacement for slackening. The idea is to turn the "instant manpower" button into something
+	# which instead takes effect over time. The professionalism decrease also happens over time. It also prevents a player spamming
+	# it.
+	
+	# TODO: If the merc mechanism isn't changed, then it would be good to add an event that fires if the modifier enabled but professionalism
+	# drops to zero, as currently a player can abuse this slightly if they're on the edge by activating this and then immediately recruiting
+	# mercenaries.
+	
+	mmr_slacken_replacement_enable = {
+		potential = {
+			has_dlc = "Cradle of Civilization"
+			NOT = { has_country_modifier = mmr_slacken_replacement_modifier }
+		}
+		allow = {
+			army_professionalism = 0.1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mmr_slacken_replacement_modifier"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 0 # AI should never slacken.
+		}
+	}
+	
+}
