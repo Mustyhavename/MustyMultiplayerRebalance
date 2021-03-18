@@ -1,0 +1,20 @@
+
+# Increased attrition cap from 5% to 10% (like to increase it more but needs real testing first). Manpower modifier kept unchanged.
+# The main effect this has is marching large armies to siege provinces with low supply limits (e.g. mountains), as they'll end up
+# taking a lot of attrition damage for that alone. This may well kill the AI, but who cares, this is a multiplayer mod.
+
+land_province = {
+	max_attrition = 10
+	local_manpower_modifier = 0.25
+}
+
+# Make scorching now give attrition.
+# Note that adding a supply limit reduction would be nice. However, percentages are additive, and technology gives a huge percentages
+# bonus over time, so a 50% supply limit modifier only affects the base cost of a province. 
+# TODO: As this is more powerful, cost should likely be increased as 5 mil is pretty cheap for this, especially if you stick this on
+# a mountain fort with ramparts.
+
+scorched_earth = {
+	local_hostile_movement_speed = -0.50
+	local_hostile_attrition = 2
+}

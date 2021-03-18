@@ -1,6 +1,7 @@
 # As this mod focuses on rebalancing all idea groups, this file was copied directly from the main source and then modified.
 # Any new idea groups added in future patches should not be affected.
 # For ease of viewing the modifications, the old ideas are commented out, usually with their reasoning.
+# Note that the file MUST be the same name as the vanilla game as otherwise all the icons duplicate...
 
 aristocracy_ideas = {
 	category = MIL
@@ -63,7 +64,8 @@ plutocracy_ideas = {
 	category = MIL
 
 	bonus = {
-		global_institution_spread = 0.10
+		# Used to give a tiny institution spread bonus which is useless. Give tech cost instead, but less than innovative.
+		technology_cost = -0.05
 		burghers_loyalty_modifier = 0.1
 		vaisyas_loyalty_modifier = 0.1
 	}
@@ -73,8 +75,9 @@ plutocracy_ideas = {
 	}
 
 	tradition_of_payment = {
-		mercenary_manpower = 0.10
-		mercenary_discipline = 0.025
+		# Gives more merc manpower than before and makes mercs cheaper. Discipline moved.
+		mercenary_manpower = 0.25
+		mercenary_cost = -0.25
 	}
 	abolished_serfdom = {
 		land_morale = 0.10
@@ -86,13 +89,15 @@ plutocracy_ideas = {
 		merchants = 1
 	}
 	free_subjects = {
-		global_trade_goods_size_modifier = 0.1
+		# Buffed from 0.1 to 0.2.
+		global_trade_goods_size_modifier = 0.2
 	}
 	free_cities = {
 		caravan_power = 0.25
 	}
-	emancipation = {
-		manpower_recovery_speed = 0.2
+	mmr_mercenary_elite = {
+		# Used to give manpower recovery speed, but now gives a merc discipline bonus. Greatly increased from 2.5% to 10%.
+		mercenary_discipline = 0.1
 	}
 
 	ai_will_do = {
@@ -100,7 +105,7 @@ plutocracy_ideas = {
 	}
 }
 
-
+# Unchanged
 innovativeness_ideas = {
 	category = ADM
 
@@ -148,7 +153,7 @@ innovativeness_ideas = {
 	}
 }
 
-
+# Unchanged
 religious_ideas = {
 	category = ADM
 
@@ -211,7 +216,8 @@ spy_ideas = {
 	}
 
 	vetting = {
-		global_spy_defence = 0.33
+		# Buffed from 33% to 50%
+		global_spy_defence = 0.50
 	}
 
 	state_propaganda = {
@@ -224,11 +230,13 @@ spy_ideas = {
 	}
 	
 	privateers = {
+		# Buffed privateers from 33% to 50%
 		embargo_efficiency = 0.25
-		privateer_efficiency = 0.33
+		privateer_efficiency = 0.50
 	}
-	audit_checks = {
-		yearly_corruption = -0.1
+	mmr_supply_raids = {
+		# Used to be a useless corruption decay. Replaced by hostile attrition (which is stronger as the cap has been increased).
+		hostile_attrition = 1
 	}
 
 	ai_will_do = {
@@ -236,7 +244,8 @@ spy_ideas = {
 	}
 }
 
-
+# Unchanged
+# TODO: Needs some buffs as this is basically useless in MP.
 diplomatic_ideas = {
 	category = DIP
 	bonus = {
@@ -290,8 +299,9 @@ offensive_ideas = {
 	bayonet_leaders = {
 		leader_land_shock = 1
 	}
-	national_conscripts = {
-		global_regiment_recruit_speed = -0.1
+	mmr_swift_assault = {
+		# Replaced a pretty useless recruitment speed bonus.
+		movement_speed = 0.1
 	}
 	superior_firepower = {
 		leader_land_fire = 1
@@ -320,7 +330,9 @@ defensive_ideas = {
 	category = MIL
 
 	bonus = {
-		hostile_attrition = 1
+		# Attrition moved, this is now a damage reduction.
+		fire_damage_received = -0.05
+		shock_damage_received = -0.05
 	}
 
 	battlefield_commisions = {
@@ -330,17 +342,21 @@ defensive_ideas = {
 		land_morale = 0.15
 	}
 	improved_manuever = {
-		leader_land_manuever = 1
+		# Buffed from 1 to 2
+		leader_land_manuever = 2
 	}
-	regimental_system = {
-		land_maintenance_modifier = -0.05
+	mmr_defensive_tactics = {
+		# Was a land maintenance reduction, now the attrition which was a bonus, up from 1% to 2%.
+		hostile_attrition = 2
 	}
 	defensive_mentality = {
+		# Buffed the maintenance from 10% to 20%
 		defensiveness = 0.2
-		fort_maintenance_modifier = -0.1
+		fort_maintenance_modifier = -0.2
 	}
 	supply_trains = {
-		reinforce_speed = 0.33
+		# Buffed from 33% to 50%
+		reinforce_speed = 0.5
 	}
 	improved_foraging = {
 		land_attrition = -0.25
@@ -351,7 +367,7 @@ defensive_ideas = {
 	}
 }
 
-
+# Unchanged
 trade_ideas = {
 	category = DIP
 
@@ -473,18 +489,22 @@ exploration_ideas = {
 	overseas_exploration = {
 		range = 0.5
 	}
+	# Buffed from 10 to 20
 	land_of_opportunity = {
-		global_colonial_growth = 10
+		global_colonial_growth = 20
 	}
+	# Changed the tariff bonus to trade efficiency, as the latter is actually useful.
 	vice_roys  = {
-		global_tariffs = 0.10
+		trade_efficiency = 0.1
  		envoy_travel_time = -0.20
  	}
-	free_colonies = {
-		expel_minorities_cost = -1.0
+	# Was expel minorities, which is awful. Give them back a colonist.
+	mmr_colonial_boom = {
+		colonists = 1
 	}
+	# Buffed from 25% to 50% to give you a reason to keep this long term
 	global_empire = {
-		naval_forcelimit_modifier = 0.25
+		naval_forcelimit_modifier = 0.50
 	}
 
 	ai_will_do = {
@@ -718,8 +738,9 @@ quality_ideas = {
 	private_to_marshal = {
 		infantry_power = 0.1
 	}
+	# Buffed from 0.5 to 1.0
 	quality_education = {
-		army_tradition = 0.5
+		army_tradition = 1.0
 	}
 	finest_of_horses = {
 		cavalry_power = 0.1
@@ -730,8 +751,9 @@ quality_ideas = {
 	naval_drill = {
 		naval_morale = 0.10
 	}
-	copper_bottoms = {
-		naval_attrition = -0.25
+	# Was naval attrition (...why). Give army drill gain instead.
+	mmr_regular_drilling =  {
+		drill_gain_modifier = 1.0
 	}
 	massed_battery = {
 		artillery_power = 0.1
@@ -778,7 +800,9 @@ quantity_ideas = {
 	}
 }
 
-
+# Unchanged
+# TODO: Needs some buffs as once colonisation is done this is useless.
+# Could give trade_company_investment_cost but again, once these are built it's kinda useless.
 expansion_ideas = {
 	category = ADM
 	important = yes
@@ -866,20 +890,23 @@ administrative_ideas = {
 		governing_capacity_modifier = 0.25
 	}
 
+	# Buffed from 10% to 20%
 	organised_mercenary_payment = {
-		mercenary_cost = -0.10
+		mercenary_cost = -0.20
 	}
 	adaptability = {
 		core_creation = -0.25
 	}
+	# Buffed from 15% to 20%
 	benefits_for_mercenaries = {
-		merc_maintenance_modifier = -0.15
+		merc_maintenance_modifier = -0.20
 	}
 	bookkeeping = {
 		interest = -0.5
 	}
+	# Buffed from 25% to 50%
 	organised_mercenary_recruitment = {
-		mercenary_manpower = 0.25
+		mercenary_manpower = 0.5
 	}
 	administrative_efficiency_idea = {
 		advisor_pool = 1
@@ -897,6 +924,8 @@ administrative_ideas = {
 	}
 }
 
+# Unchanged
+# TODO: Needs some buffs as this is pretty useless in MP.
 humanist_ideas = {
 	category = ADM
 
@@ -938,6 +967,8 @@ humanist_ideas = {
 	}
 }
 
+# Unchanged
+# TODO: Needs some buffs as this is pretty useless in MP.
 influence_ideas = {
 	category = DIP
 
@@ -986,6 +1017,7 @@ influence_ideas = {
 	}
 }
 
+# Unchanged
 naval_ideas = {
 	category = MIL
 
