@@ -1,5 +1,7 @@
 ﻿l_english:
+ # Slacken tooltip replacement.
  CANT_SLACKEN_TOO_LOW:0 "Slacken recruitment is disabled in this mod. Use the decision as an alternative."
+ # New idea group names.
  mmr_cavalry_primacy:0 "Cavalry Primacy"
  mmr_cavalry_primacy_desc:0 "Nobles must lead from the front, and when they do so they must tower over the expendable masses that surround them. However, to make our armies truly elite, we must increase the ratio of true knights in our army."
  mmr_charge_the_flanks:0 "Charge the Flanks"
@@ -17,9 +19,13 @@
  mmr_regular_drilling:0 "Regular Drilling"
  mmr_regular_drilling_desc:0 "To ensure the superior quality of our army, regular drills must be instilled. This will enable new recruits to be trained up to our standards much more quickly."
  mmr_slacken_replacement_modifier:0 "Slackened Recruitment"
+ # New event modifiers.
  desc_mmr_slacken_replacement_modifier:0 "Our recruiting standards have been temporarily eased. This has given us a boon in new recruits to replenish our numbers, but is having a detrimental effect on our army quality."
+ mmr_ruler_changed_muslim_school:0 "Ruler changed Muslim school"
+ desc_mmr_ruler_changed_muslim_school:0 "Our ruler has changed the Muslim school of law that we follow. We may not change schools again until a new ruler succeeds them."
  mmr_slacken_replacement_enable_title:0 "Slacken Recruiting Standards"
  mmr_slacken_replacement_enable_desc:0 "Our army has professional standards which means many recruits do not make the grade. To ease manpower issues we can lower these standards, but this will have a detrimental affect on army quality."
+ # New events.
  mmr_change_muslim_school_title:0 "Change Muslim School"
  mmr_change_muslim_school_desc:0 "We have begun questioning our religious school of thought. Perhaps it is time to explore another school?"
  mmr_change_muslim_school_decision_tooltip:0 "This will allow us to change our Islamic school."

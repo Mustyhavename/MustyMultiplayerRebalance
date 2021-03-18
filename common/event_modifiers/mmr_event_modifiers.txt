@@ -9,3 +9,7 @@ mmr_slacken_replacement_modifier = {
 	manpower_recovery_speed = 1.0
 	yearly_army_professionalism = -0.02
 }
+
+mmr_ruler_changed_muslim_school = {
+	# Nothing
+}

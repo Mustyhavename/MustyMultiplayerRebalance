@@ -1,11 +1,5 @@
 # Event triggered by the player decision to change Muslim religious schools.
 
-# TODO: The option to change to your existing school will still show up, which is a bit crap.
-# Unfortunately, "NOT = { school = X }" doesn't work.
-
-# TODO: There is no cooldown on this event. I'd like to tie it into the current ruler lifetime but this
-# needs looking up.
-
 country_event = {
 	id = mmr_events.1
 	title = "mmr_events.1.name"
@@ -18,78 +12,148 @@ country_event = {
 		name = mmr_events.1.a #Hanafi
 		trigger = {
 			NOT = { religion = shiite }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = hanafi_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = hanafi_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.b #Hanbali
 		trigger = {
 			NOT = { religion = shiite }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = hanbali_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = hanbali_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.c #Maliki
 		trigger = {
 			NOT = { religion = shiite }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = maliki_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = maliki_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.d #Shafi'i
 		trigger = {
 			NOT = { religion = shiite }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = shafii_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = shafii_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.e #Jafari
 		trigger = {
 			NOT = { religion = sunni }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = jafari_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = jafari_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.f #Ismaili
 		trigger = {
 			NOT = { religion = sunni }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = ismaili_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = ismaili_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.g #Zaidi
 		trigger = {
 			NOT = { religion = sunni }
+			NOT = {
+				religious_school = {
+					group = muslim
+					school = zaidi_school
+				}
+			}
+		}
+		add_stability = -2
+		add_ruler_modifier = {
+			name = "mmr_ruler_changed_muslim_school"
+			duration = -1
 		}
 		set_religious_school = {
 			group = muslim
 			school = zaidi_school
 		}
-		add_stability = -2
 	}
 	option = {
 		name = mmr_events.1.h #Cancel

@@ -35,6 +35,7 @@ country_decisions = {
 			ai = no
 			has_dlc = "Cradle of Civilization"
 			religion_group = muslim
+			NOT = { has_ruler_modifier = mmr_ruler_changed_muslim_school }
 		}
 		allow = {
 			stability = 2
