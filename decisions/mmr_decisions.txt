@@ -27,4 +27,21 @@ country_decisions = {
 		}
 	}
 	
+	# This decision enables Muslim nations to change their religious school in exchange for 2 stab. The actual effect
+	# of the decision though is handled in the event itself (as the event gives the option to the player to cancel).
+	
+	mmr_change_muslim_school = {
+		potential = {
+			ai = no
+			has_dlc = "Cradle of Civilization"
+			religion_group = muslim
+		}
+		allow = {
+			stability = 2
+		}
+		effect = {
+			custom_tooltip = mmr_change_muslim_school_decision_tooltip
+			country_event = { id = mmr_events.1 }
+		}
+	}
 }

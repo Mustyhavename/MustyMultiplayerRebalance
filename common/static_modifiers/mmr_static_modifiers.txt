@@ -18,3 +18,27 @@ scorched_earth = {
 	local_hostile_movement_speed = -0.50
 	local_hostile_attrition = 2
 }
+
+
+########################################
+# Religious Schools
+########################################
+
+# WARNING - The modifiers below only affect the "invite scholars" decisions, NOT the modifier for following the school. That's in the religion file instead.
+# Buffed 5% admin cost to 5% tech cost, and 10% AE reduction to 20%
+
+hanafi_scholar_modifier = {
+	religion_sub_modifier = yes # Will make icon placed next to religion modifier
+	religion = yes
+	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
+	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	technology_cost = -0.05
+}
+
+hanbali_scholar_modifier = {
+	religion_sub_modifier = yes # Will make icon placed next to religion modifier
+	religion = yes
+	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
+	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	ae_impact = -0.2
+}
