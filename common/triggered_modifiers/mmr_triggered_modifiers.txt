@@ -1,0 +1,79 @@
+######################################
+# Mercenary Professionalism Decay
+######################################
+
+# I don't know if there's a better way of doing this, but what this is trying to do is assign a maintenance cost of 1% professionalism
+# to each merc company hired. Ideally you'd just have a modifier which worked this out and did some simple maths but I don't think
+# Paradox's scripts can do this. Instead, just create several tiers for numbers a player might realistically obtain.
+#
+# The "potential" flags are there so a player will only see his current modifier and the two adjacent ones, but really don't matter.
+
+mmr_merc_prof_decay_1 = {
+	potential = {
+		num_of_hired_mercenary_companies = 0
+		NOT = { num_of_hired_mercenary_companies = 3 }
+	}
+	trigger = {
+		num_of_hired_mercenary_companies = 1
+		NOT = { num_of_hired_mercenary_companies = 2 }
+	}
+	yearly_army_professionalism = -0.01
+}
+
+mmr_merc_prof_decay_2 = {
+	potential = {
+		num_of_hired_mercenary_companies = 1
+		NOT = { num_of_hired_mercenary_companies = 4 }
+	}
+	trigger = {
+		num_of_hired_mercenary_companies = 2
+		NOT = { num_of_hired_mercenary_companies = 3 }
+	}
+	yearly_army_professionalism = -0.02
+}
+
+mmr_merc_prof_decay_3 = {
+	potential = {
+		num_of_hired_mercenary_companies = 2
+		NOT = { num_of_hired_mercenary_companies = 5 }
+	}
+	trigger = {
+		num_of_hired_mercenary_companies = 3
+		NOT = { num_of_hired_mercenary_companies = 4 }
+	}
+	yearly_army_professionalism = -0.03
+}
+
+mmr_merc_prof_decay_4 = {
+	potential = {
+		num_of_hired_mercenary_companies = 3
+		NOT = { num_of_hired_mercenary_companies = 6 }
+	}
+	trigger = {
+		num_of_hired_mercenary_companies = 4
+		NOT = { num_of_hired_mercenary_companies = 5 }
+	}
+	yearly_army_professionalism = -0.04
+}
+
+mmr_merc_prof_decay_5 = {
+	potential = {
+		num_of_hired_mercenary_companies = 4
+		NOT = { num_of_hired_mercenary_companies = 7 }
+	}
+	trigger = {
+		num_of_hired_mercenary_companies = 5
+		NOT = { num_of_hired_mercenary_companies = 6 }
+	}
+	yearly_army_professionalism = -0.05
+}
+
+mmr_merc_prof_decay_spam = {
+	potential = {
+		num_of_hired_mercenary_companies = 5
+	}
+	trigger = {
+		num_of_hired_mercenary_companies = 6
+	}
+	yearly_army_professionalism = -0.1
+}
