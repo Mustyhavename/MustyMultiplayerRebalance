@@ -1,0 +1,12 @@
+# Normally recruiting generals gives 1% prof and hiring a merc company loses 5% prof. These have both been removed.
+# Tradition is instead gained steadily through drilling and lost passively for maintaining merc companies.
+
+# country
+on_general_recruited = {
+
+}
+
+# THIS = Province, FROM = Country
+on_mercenary_recruited = {
+
+}

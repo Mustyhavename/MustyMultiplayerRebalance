@@ -1,6 +1,8 @@
 ﻿l_english:
- # Slacken tooltip replacement.
+ # Vanilla tooltip replacements.
  CANT_SLACKEN_TOO_LOW:0 "Slacken recruitment is disabled in this mod. Use the decision as an alternative."
+ ARMY_PROFESSIONALISM_DESC:1 "Army Professionalism is how dependent your country is on mercenary or professional armies. It increases by drilling units but decreases for each mercenary company you maintain."
+ ARMY_PROFESSIONALISM_STATIC_MODIFIERS_DESC:1 "Note that unlike vanilla, professionalism gain and loss in this mod is not instant."
  # New idea group names.
  mmr_cavalry_primacy:0 "Cavalry Primacy"
  mmr_cavalry_primacy_desc:0 "Nobles must lead from the front, and when they do so they must tower over the expendable masses that surround them. However, to make our armies truly elite, we must increase the ratio of true knights in our army."

@@ -19,6 +19,12 @@ scorched_earth = {
 	local_hostile_attrition = 2
 }
 
+# Drilling armies buffed from 1% per year to 2%
+
+drilling_armies = { # Multiplied by percentage of forcelimit currently drilling
+	yearly_army_professionalism = 0.02
+}
+
 
 ########################################
 # Religious Schools
