@@ -25,6 +25,12 @@ drilling_armies = { # Multiplied by percentage of forcelimit currently drilling
 	yearly_army_professionalism = 0.02
 }
 
+# Nerfed the Orthodox manpower bonus from 33% to 20%.
+
+patriarch_authority_local = {
+	local_unrest = -3
+	local_manpower_modifier = 0.20
+}
 
 ########################################
 # Religious Schools

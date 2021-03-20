@@ -1,0 +1,22 @@
+# Buffed the fervor war modifier to 15% morale instead of just 10%
+# Main reason being is that Protestant gets 5% from a church bonus, so given that reformed can only really sustain
+# one bonus at a time (and the other two don't give war bonuses), it feels right that Protestant's be 1/3 effective.
+
+fervor_war = {
+	cost = 5
+	effect = {
+		land_morale = 0.15
+		naval_morale = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+		modifier = {
+			factor = 10
+			is_at_war = yes
+		}		
+	}	
+}
