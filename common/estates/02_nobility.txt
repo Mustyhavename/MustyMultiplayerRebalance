@@ -4,15 +4,9 @@ estate_nobles =
 
 	# If true, country will get estate
 	trigger = {
-		NOT = { has_government_attribute = is_merchant_republic }
-		NOT = { has_reform = pirate_republic_reform }
-		NOT = { has_reform = veche_republic }
-		NOT = { has_reform = cossacks_reform }
 		NOT = { government = native }
-		NOT = { has_reform = trading_city }
+
 		NOT = { has_reform = siberian_tribe }
-		NOT = { is_revolutionary_republic_trigger = yes }
-		NOT = { has_reform = revolutionary_empire_reform }
 		NOT = { has_reform = peasants_republic }
 		NOT = { has_reform = american_republic }
 		NOT = { has_reform = federal_republic }
@@ -32,7 +26,6 @@ estate_nobles =
 			has_dlc = "Mandate of Heaven"
 		}
 		is_nomad = no
-		is_colonial_nation = no
 		OR = {
 			NOT = { has_dlc = "Common Sense" }
 			AND = {
@@ -49,7 +42,6 @@ estate_nobles =
 			}
 			has_parliament = no
 		}
-		NOT = { has_reform = revolutionary_empire_reform }
 	}
 
 	country_modifier_happy = {
