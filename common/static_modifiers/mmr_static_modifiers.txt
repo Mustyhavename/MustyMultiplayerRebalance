@@ -54,3 +54,17 @@ hanbali_scholar_modifier = {
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
 	ae_impact = -0.2
 }
+
+# This is actually a bug fix to vanilla (which would've been solved if Paradox made it so you only needed to change ONE place...)
+# Having this school as your own gives 0.2 republican tradition, yet inviting a scholar gives 0.5?! These should be consistent.
+
+ismaili_scholar_modifier = {
+	religion_sub_modifier = yes # Will make icon placed next to religion modifier
+	religion = yes
+	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
+	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	horde_unity = 1
+	legitimacy = 1
+	republican_tradition = 0.2
+	devotion = 1
+}
