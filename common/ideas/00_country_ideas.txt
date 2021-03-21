@@ -1,3 +1,8 @@
+# WARNING - This is another of the files that Paradox hasn't implemented in a nice manner.
+# The "nice" way would be to have a separate file, but if you do this it doesn't work and creates incredibly weird stuff.
+# If the file has the same name as vanilla but misses groups, then those are lost.
+# Thus the only way to do this is copy all ideas, which means this must be updated with new patches as new national ideas are added.
+
 # Do not change tags in here without changing every other reference to them.
 # Do not change tags in here without changing every other reference to them.
 # If adding new groups or ideas, make sure they are unique.
@@ -155,7 +160,8 @@ GBR_ideas = {
 		discipline = 0.05
 	}
 	british_industrialization = {
-		global_trade_goods_size_modifier = 0.2
+		# Nerfed from 20% to 10%
+		global_trade_goods_size_modifier = 0.1
 	}
 	britanna_rules_the_waves = {
 		leader_naval_manuever = 1
@@ -291,7 +297,7 @@ RUS_ideas = {
 
 SPA_ideas = {
 	start = {
-		land_morale = 0.10
+		land_morale = 0.10	# Nerfed from 15% to 10%
 		artillery_fire = 1
 	}
 	
@@ -396,7 +402,7 @@ NED_ideas = {
 	}
 	polders = {
 		development_cost = -0.1
-		defensiveness = 0.1
+		defensiveness = 0.1	# Added fort defence
 	}
 	instructie_voor_de_admiraliteiten = {
 		leader_naval_fire = 2
@@ -477,7 +483,8 @@ FRA_ideas = {
 	elan = {
 		land_morale = 0.15 #Nerfed from 0.20
 	}
-	estates_general = {
+	mmr_defence_against_england = {
+		# Was base tax, which was useless.
 		naval_morale = 0.05 #Added naval morale
 		ship_durability = 0.05 #Added Ship durability
 	}

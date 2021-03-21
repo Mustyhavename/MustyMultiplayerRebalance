@@ -1,7 +1,7 @@
-# As this mod focuses on rebalancing all idea groups, this file was copied directly from the main source and then modified.
-# Any new idea groups added in future patches should not be affected.
-# For ease of viewing the modifications, the old ideas are commented out, usually with their reasoning.
-# Note that the file MUST be the same name as the vanilla game as otherwise all the icons duplicate...
+# WARNING - This is another of the files that Paradox hasn't implemented in a nice manner.
+# The "nice" way would be to have a separate file, but if you do this it doesn't work and creates incredibly weird stuff.
+# If the file has the same name as vanilla but misses groups, then those are lost.
+# Thus the only way to do this is copy all ideas, which means this must be updated with new patches as new idea groups are added.
 
 aristocracy_ideas = {
 	category = MIL
