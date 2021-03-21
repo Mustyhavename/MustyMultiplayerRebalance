@@ -789,7 +789,10 @@ quantity_ideas = {
 		global_supply_limit_modifier = 0.33
 	}
 	garrison_conscription = {
-		garrison_size = 0.25
+		# Buffed from 25% to 50%
+		# 25% means that for each fort level you get 500 extra garrison, meaning 1500 extra troops are needed to siege,
+		# which didn't seem a lot, so doubled it.
+		garrison_size = 0.5
 	}
 	expanded_supply_trains = {
 		land_attrition = -0.1

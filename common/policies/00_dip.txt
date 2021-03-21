@@ -138,12 +138,17 @@ colonial_expansions = {
 		full_idea_group = exploration_ideas
 	}		
 
-	global_colonial_growth = 20
+	# Nerfed from 20 to 10
+	# This is consistent with other policies
+	# But also accounts for the buff to explo where it now gives 10 more
+	global_colonial_growth = 10
 	native_uprising_chance = -0.5
 	
 	ai_will_do = {
 		factor = 1
 		modifier = {
+			# ...I don't understand Paradox, this requires two groups which both give colonists.
+			# Well, cool defensive code in case some malus ever gives -10 colonists.
 			factor = 0
 			NOT = { num_of_colonists = 1 }
 		}
@@ -206,7 +211,9 @@ beneficial_neglect = {
 	}
 }
 
-restrictions_for_colonies = {
+# Was "restrictions_for_colonies" and gave 10% tariffs and 10% liberty desire from dev.
+# Give it a more intersting bonus.
+mmr_convert_the_primitives = {
 	monarch_power = DIP
 
 	potential = {
@@ -219,10 +226,8 @@ restrictions_for_colonies = {
 		full_idea_group = religious_ideas
 	}
 
-
-
-	global_tariffs = 0.1
-	liberty_desire_from_subject_development = -0.1
+	global_missionary_strength = 0.01
+	culture_conversion_cost = -0.1
 
 	ai_will_do = {
 		factor = 1
@@ -476,7 +481,7 @@ production_quota_act = {
 		full_idea_group = trade_ideas
 		full_idea_group = quantity_ideas
 	}
-	global_trade_goods_size_modifier = 0.2
+	global_trade_goods_size_modifier = 0.1	# Nerfed from 20% to 10%
  
 
 	ai_will_do = {
@@ -752,7 +757,8 @@ the_foreign_aid_act = {
 		full_idea_group = influence_ideas
 	}	
 	
-	diplomatic_upkeep = 1
+	# Swapped the diplo slot out for build cost
+	build_cost = -0.1
 	diplomatic_reputation = 1
 	
 	ai_will_do = {
@@ -883,8 +889,8 @@ the_integrated_administration_act = {
 		full_idea_group = quality_ideas
 	}	
 	
-	vassal_income = 0.25
-	global_institution_spread = 0.1
+	build_cost = -0.1					# Was vassal income
+	global_institution_spread = 0.2		# Buffed to be consistent with other policies
 	
 	ai_will_do = {
 		factor = 1
@@ -1036,7 +1042,9 @@ the_foreign_support_act = {
 	}
 }
 
-the_stamp_act = {
+# Was "the_stamp_act" and gave 25% tariffs (useless)
+# Now gives some actual benefits.
+mmr_colonial_economies = {
 	monarch_power = DIP
 	
 	potential = {
@@ -1048,7 +1056,8 @@ the_stamp_act = {
 		full_idea_group = exploration_ideas
 	}
 	
-	global_tariffs = 0.25
+	global_colonial_growth = 10
+	trade_efficiency = 0.1
 	
 	ai_will_do = {
 		factor = 1
@@ -1096,8 +1105,10 @@ black_chamber_act = {
 	}
 }
 
-diplomatic_defence_act = {
-	monarch_power = DIP
+# Was "diplomatic_defense_act" and gave a diplomat and a diplo relation.
+# Let's change this into a military group.
+mmr_improved_line_drills = {
+	monarch_power = MIL
 	potential = {
 		has_idea_group = diplomatic_ideas
 		has_idea_group = defensive_ideas
@@ -1107,16 +1118,11 @@ diplomatic_defence_act = {
 		full_idea_group = diplomatic_ideas
 		full_idea_group = defensive_ideas
 	}
-
-	diplomats = 1
-	diplomatic_upkeep = 1
+	
+	shock_damage_received = -0.1
 	
 	ai_will_do = {
-		factor = 0.7
-		modifier = {
-			factor = 0
-			NOT = { num_of_cities = 10 }
-		}		
+		factor = 1
 	}
 	
 }

@@ -37,8 +37,11 @@ the_combination_act = {
 	}
 }
 
-the_court_of_wards_and_liveries = {
-	monarch_power = ADM
+# Was "the_court_of_wards_and_liveries" and gave 10% tax and 10% cav cost
+# Turning this into a mil policy.
+
+mmr_improved_noble_equipment = {
+	monarch_power = MIL # Changed to MIL
 
 	potential = {
 		has_idea_group = aristocracy_ideas
@@ -48,47 +51,15 @@ the_court_of_wards_and_liveries = {
 		full_idea_group = aristocracy_ideas
 		full_idea_group = economic_ideas
 	}
-		
-	global_tax_modifier = 0.10
-	cavalry_cost = -0.10
+	
+	shock_damage = 0.1
 		
 	ai_will_do = {
-		factor = 1	
-		modifier = {
-			factor = 0
-			legitimacy = 95
-		}		
-		modifier = {
-			factor = 1.5
-			NOT = { legitimacy = 80 }
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { legitimacy = 60 }
-		}			
-		modifier = {
-			factor = 1.5
-			NOT = { legitimacy = 40 }
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { legitimacy = 20 }
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { tax_income_percentage = 0.25 }
-		}			
-		modifier = {
-			factor = 1.5
-			tax_income_percentage = 0.45
-		}
-		modifier = {
-			factor = 1.5
-			tax_income_percentage = 0.7
-		}
+		factor = 1
 	}
 }
 
+# Used to give 10% tax and 0.2 republican tradition. Now gives 10% dev cost.
 formalized_measures = {
 	monarch_power = ADM
 
@@ -103,27 +74,17 @@ formalized_measures = {
 		full_idea_group = economic_ideas
 	}	
 
-	global_tax_modifier = 0.10
-	republican_tradition = 0.2
+	development_cost = -0.1
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 0.75
-			NOT = { tax_income_percentage = 0.25 }
-		}			
-		modifier = {
-			factor = 1.5
-			tax_income_percentage = 0.45
-		}
-		modifier = {
-			factor = 1.5
-			tax_income_percentage = 0.7
-		}
 	}
 }
 
-agricultural_cultivations = {
+# Was agricultural_cultivations and used to give dev cost and land forcelimit.
+# Giving dev cost to a group that already gave 20% with the most OP mil group was just really good.
+# Instead, give them troop cost discounts.
+mmr_army_cost_optimisations = {
 	monarch_power = ADM
 
 	potential = {
@@ -136,7 +97,7 @@ agricultural_cultivations = {
 		full_idea_group = quantity_ideas
 	}		
 	
-	development_cost = -0.1
+	infantry_cost = -0.1
 	land_forcelimit_modifier = 0.1
 
 	ai_will_do = {
@@ -200,7 +161,7 @@ manueline_architecture = {
 		full_idea_group = expansion_ideas
 	}
 
-	build_cost = -0.15
+	build_cost = -0.2	# Buffed from 15% to 20%
 	
 	ai_will_do = {
 		factor = 1
@@ -287,8 +248,9 @@ public_welfare_act = {
 		full_idea_group = economic_ideas
 	}
 
+	# Replaced teh worthless 10% stab cost with 5% goods produced.
 	global_unrest = -1
-	stability_cost_modifier = -0.1
+	global_trade_goods_size_modifier = 0.05
 
 	ai_will_do = {
 		factor = 1
@@ -329,11 +291,13 @@ the_spy_discovery_act = {
 		full_idea_group = administrative_ideas
 	}
 
-	yearly_corruption = -0.1
+	# Replaced the 0.1% corruption with garrison size
+	# 50% was picked as it means 1000 men for each fort level, which means 3 extra regiments are needed to siege.
+	garrison_size = 0.5
 	global_spy_defence = 0.2
 
 	ai_will_do = {
-		factor = 0.6 #Keep in mind lower stab cost is probably pretty weak given this costs ADM...
+		factor = 1
 	}
 }
 
@@ -419,7 +383,9 @@ the_tolerance_act = {
 	}
 }
 
-vassal_taxation_policy = {
+# Was "vassal_taxation_policy" and gave 50% vassal income, which was pretty useless.
+# Now gives some manpower and goods produced.
+mmr_vassal_labourers = {
 	monarch_power = ADM
 
 	potential = {
@@ -432,7 +398,8 @@ vassal_taxation_policy = {
 		full_idea_group = administrative_ideas
 	}
 
-	vassal_income = 0.5
+	global_manpower_modifier = 0.1
+	global_trade_goods_size_modifier = 0.05
 
 	ai_will_do = {
 		factor = 1
@@ -643,8 +610,9 @@ policy_of_calculate_delay = {
 	}
 }
 
+# Was "the_loyalty_act" and gave autonomy reduction and spy defence.
 
-the_loyalty_act = {
+mmr_underhanded_trade_company_deals = {
 	monarch_power = ADM
 	potential = {
 		has_idea_group = spy_ideas
@@ -656,32 +624,10 @@ the_loyalty_act = {
 		full_idea_group = expansion_ideas
 	}
 	
-	global_autonomy = -0.05
-	global_spy_defence = 0.2
+	trade_company_investment_cost = -0.2
  
-
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 0
-			NOT = { average_autonomy_above_min = 1 }
-		}
-		modifier = {
-			factor = 1.5
-			average_autonomy_above_min = 20
-		}
-		modifier = {
-			factor = 1.5
-			average_autonomy_above_min = 40
-		}			
-		modifier = {
-			factor = 1.5
-			average_autonomy_above_min = 60
-		}
-		modifier = {
-			factor = 1.5
-			average_autonomy_above_min = 80
-		}	
 	}
 }
 
@@ -719,7 +665,8 @@ vassal_obligations_act = {
 		full_idea_group = economic_ideas
 	}	
 	
-	vassal_income = 0.25
+	# Swapped the 25% vassal tax for 10% manpower
+	global_manpower = 0.1
 	vassal_forcelimit_bonus = 1
 	
 	ai_will_do = {
@@ -809,7 +756,9 @@ vassal_integration_act = {
 	
 }
 
-overseas_dominions = {
+# Was "overseas_dominions" and gave useless vassal income and global tariffs.
+# Now gives development cost.
+mmr_overseas_development = {
 	monarch_power = ADM
 	
 	potential = {
@@ -822,35 +771,16 @@ overseas_dominions = {
 		full_idea_group = expansion_ideas
 	}	
 	
-	vassal_income = 0.25
-	global_tariffs = 0.1
+	development_cost = -0.1
 	
 	ai_will_do = {
-		factor = 1
-		modifier = {
-			factor = 0
-			NOT = { vassal = 1 }
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 2
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 3
-		}			
-		modifier = {
-			factor = 1.5
-			vassal = 4
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 5
-		}			
+		factor = 1		
 	}
 }
 
-enlightened_aristocracy = {
+# Was "enlightened_aristocracy" and gave 10% PE and 20% religious unity.
+# Now gives 10% dev cost.
+mmr_tolerant_noble_development = {
 	monarch_power = ADM
 	
 	potential = {
@@ -863,52 +793,10 @@ enlightened_aristocracy = {
 		full_idea_group = aristocracy_ideas
 	}	
 	
-	production_efficiency = 0.1
-	religious_unity = 0.2
+	development_cost = -0.1
 	
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 0.6
-			religious_unity = 1
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { religious_unity = 0.8 }
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { religious_unity = 0.6 }
-		}			
-		modifier = {
-			factor = 1.5
-			NOT = { religious_unity = 0.4 }
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { religious_unity = 0.2 }
-		}
-		
-		modifier = {
-			factor = 0.6
-			NOT = { production_income_percentage = 0.1 }
-		}			
-		modifier = {
-			factor = 1.5
-			production_income_percentage = 0.2
-		}
-		modifier = {
-			factor = 1.5
-			production_income_percentage = 0.3
-		}
-		modifier = {
-			factor = 1.5
-			production_income_percentage = 0.4
-		}
-		modifier = {
-			factor = 1.5
-			production_income_percentage = 0.5
-		}	
 	}
 }
 
@@ -984,7 +872,7 @@ the_transportation_act = {
 		full_idea_group = economic_ideas
 	}	
 	
-	global_trade_goods_size_modifier = 0.1
+	global_trade_goods_size_modifier = 0.05	# Nerfed from 10% to 5%
 	production_efficiency = 0.1
 	
 	ai_will_do = {
@@ -1108,7 +996,7 @@ cultural_recognition_act = {
 	}	
 	
 	num_accepted_cultures = 1
-	global_institution_spread = 0.1
+	global_institution_spread = 0.2 	# Buffed to be consistent with other policies
 	
 	ai_will_do = {
 		factor = 1
@@ -1305,7 +1193,11 @@ taxation_with_representation = {
 	}
 }
 
-cultural_understanding = {
+# Was cultural_understanding, which reduced unrest and gave rebel support bonuses.
+# As a much more interesting idea, let's give movement speed here.
+# And yes, this is a MIL bonus from two groups which have nothing to do with MIL.
+
+mmr_improved_military_access = {
 	monarch_power = ADM
 	
 	potential = {
@@ -1318,8 +1210,7 @@ cultural_understanding = {
 		full_idea_group = spy_ideas
 	}	
 	
-	global_unrest = -1
-	rebel_support_efficiency = 0.25
+	movement_speed = 0.1
 	
 	ai_will_do = {
 		factor = 1
@@ -1444,7 +1335,7 @@ church_sponsored_guilds = {
 		full_idea_group = trade_ideas
 	}
 	
-	global_trade_goods_size_modifier = 0.1
+	global_trade_goods_size_modifier = 0.05	# Nerfed from 10% to 5%
 	global_missionary_strength = 0.01
 	
 	ai_will_do = {
