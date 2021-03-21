@@ -8,6 +8,13 @@ land_province = {
 	local_manpower_modifier = 0.25
 }
 
+# Nerfed the Orthodox manpower bonus from 33% to 20%.
+
+patriarch_authority_local = {
+	local_unrest = -3
+	local_manpower_modifier = 0.20
+}
+
 # Make scorching now give attrition.
 # Note that adding a supply limit reduction would be nice. However, percentages are additive, and technology gives a huge percentages
 # bonus over time, so a 50% supply limit modifier only affects the base cost of a province. 
@@ -19,17 +26,40 @@ scorched_earth = {
 	local_hostile_attrition = 2
 }
 
+# Nerfed Prussian militarisation (because it's now easy to keep at 100%)
+# 	- 10% discipline nerfed to 5%
+#	- 20% maintenance nerfed to 10%
+
+militarized_society = {
+
+	discipline = 0.05
+	manpower_recovery_speed = 0.20
+	land_maintenance_modifier = -0.10
+
+}
+
+# Tweaks to the revolution target (mostly nerfs)
+# 	- Manpower buffed from 10% to 25%
+#	- Reduced the war exhaustion modifier from 0.15 to 0.1
+#	- Reduced the maintenance modifiers from 15% to 10%
+#	- Reduced the force limit modifier from 40% to 25%
+
+revolution_target = {
+	global_manpower_modifier = 0.25
+	land_morale = 0.10
+	war_exhaustion = -0.1
+	unjustified_demands = -0.5
+	land_maintenance_modifier = -0.1
+	naval_maintenance_modifier = -0.1
+	land_forcelimit_modifier = 0.25
+	naval_forcelimit_modifier = 0.25
+	papal_influence = -100
+}
+
 # Drilling armies buffed from 1% per year to 2%
 
 drilling_armies = { # Multiplied by percentage of forcelimit currently drilling
 	yearly_army_professionalism = 0.02
-}
-
-# Nerfed the Orthodox manpower bonus from 33% to 20%.
-
-patriarch_authority_local = {
-	local_unrest = -3
-	local_manpower_modifier = 0.20
 }
 
 ########################################
