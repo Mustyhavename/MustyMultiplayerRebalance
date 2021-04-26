@@ -158,3 +158,4 @@ country_event = {
 	option = {
 		name = mmr_events.1.h #Cancel
 	}
+}
