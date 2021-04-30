@@ -291,8 +291,8 @@ naval_infrastructure_act = {
 		full_idea_group = expansion_ideas
 	}
 
-
-	naval_forcelimit_modifier = 0.33
+	# Nerfed slighly from 33% to 30% (to bring it inline with other policies)
+	naval_forcelimit_modifier = 0.30
 
 
 	ai_will_do = {
@@ -417,8 +417,10 @@ streamlined_galley_production = {
 		full_idea_group = quantity_ideas
 	}
 	
-	galley_cost = -0.15
-	galley_power = 0.15
+	# Removed galley cost and replaced with sailors
+	# Increased galley power from 15% to 20%
+	global_sailors_modifier = 0.25
+	galley_power = 0.2
 
 	ai_will_do = {
 		factor = 1
@@ -501,8 +503,9 @@ encouragement_of_merchant_navy = {
 		full_idea_group = expansion_ideas
 	}
 	
+	# Buffed steering from 20% to 25% (inline with another policy)
 	trade_efficiency = 0.1
-	trade_steering = 0.2
+	trade_steering = 0.25
  
 
 	ai_will_do = {
@@ -657,8 +660,10 @@ protected_shipping_lanes = {
 		full_idea_group = plutocracy_ideas
 	}
 	
-	light_ship_cost = -0.15
-	light_ship_power = 0.15
+	# Buffed the ship power from 15% to 20% (I mean, it's light ships...)
+	# Buffed ship cost from 10% to 20% (as another policy gives 10% all ship costs)
+	light_ship_cost = -0.2
+	light_ship_power = 0.2
 
 	ai_will_do = {
 		factor = 1
@@ -848,8 +853,10 @@ fortified_trading_posts = {
 		full_idea_group = trade_ideas
 	}	
 	
-	global_ship_trade_power = 0.4
-	light_ship_cost = -0.1
+	# Buffed the ship cost from 10% to 20% (inline with another policy)
+	# Nerfed ship trade power from 40% to 25%
+	global_ship_trade_power = 0.25
+	light_ship_cost = -0.2
 	
 	ai_will_do = {
 		factor = 0.9

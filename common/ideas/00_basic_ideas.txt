@@ -244,12 +244,12 @@ spy_ideas = {
 	}
 }
 
-# Unchanged
-# TODO: Needs some buffs as this is basically useless in MP.
+# Completing this gives a free diplomatic policy, otherwise unchanged.
 diplomatic_ideas = {
 	category = DIP
 	bonus = {
 		reduced_stab_impacts = yes
+		possible_dip_policy = 1
 	}
 
 	foreign_embassies = {
@@ -803,9 +803,7 @@ quantity_ideas = {
 	}
 }
 
-# Unchanged
-# TODO: Needs some buffs as once colonisation is done this is useless.
-# Could give trade_company_investment_cost but again, once these are built it's kinda useless.
+# Buffed slightly to give 20% trade company cost.
 expansion_ideas = {
 	category = ADM
 	important = yes
@@ -827,7 +825,8 @@ expansion_ideas = {
 		rival_border_fort_maintenance = -0.5
 		center_of_trade_upgrade_cost = -0.2
 	}
-	additional_diplomats = {
+	mmr_trade_company_investments = {
+		trade_company_investment_cost = -0.2
 		diplomatic_upkeep = 1
 	}
 	general_colonization_law  = {
@@ -885,12 +884,13 @@ expansion_ideas = {
 	}
 }
 
-
 administrative_ideas = {
 	category = ADM
 
 	bonus = {
+		# Extra admin policy
 		governing_capacity_modifier = 0.25
+		possible_adm_policy = 1
 	}
 
 	# Buffed from 10% to 20%
@@ -927,13 +927,14 @@ administrative_ideas = {
 	}
 }
 
-# Unchanged
-# TODO: Needs some buffs as this is pretty useless in MP.
+# Buffed to get an extra military policy
+# Yes, it would make more sense in a mil group, but this actually offers humanist some kind of bonus.
 humanist_ideas = {
 	category = ADM
 
 	bonus = {
 		idea_cost = -0.1
+		possible_mil_policy = 1
 		yearly_harmony = 0.25  # Used if religion uses harmony (confucianism)
 		brahmins_muslim_loyalty_modifier = 0.1
 		dhimmi_loyalty_modifier = 0.1
@@ -970,8 +971,8 @@ humanist_ideas = {
 	}
 }
 
-# Unchanged
-# TODO: Needs some buffs as this is pretty useless in MP.
+# Unchanged - Buffs would be good but it essentially is a vassal focused tree, which is never that great in MP,
+# though stacking some of these bonuses can be good.
 influence_ideas = {
 	category = DIP
 

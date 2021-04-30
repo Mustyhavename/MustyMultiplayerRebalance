@@ -24,6 +24,8 @@
  mmr_regular_drilling:0 "Regular Drilling"
  mmr_regular_drilling_desc:0 "To ensure the superior quality of our army, regular drills must be instilled. This will enable new recruits to be trained up to our standards much more quickly."
  mmr_slacken_replacement_modifier:0 "Slackened Recruitment"
+ mmr_trade_company_investments:0 "Trade Company Investments"
+ mmr_trade_company_investments_desc:0 "Our trade companies have been a source of great revenue, and we should invest further in them and the states around them."
  # New event modifiers.
  desc_mmr_slacken_replacement_modifier:0 "Our recruiting standards have been temporarily eased. This has given us a boon in new recruits to replenish our numbers, but is having a detrimental effect on our army quality."
  mmr_ruler_changed_muslim_school:0 "Ruler changed Muslim school"
