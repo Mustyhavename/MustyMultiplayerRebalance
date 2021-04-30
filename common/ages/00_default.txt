@@ -601,8 +601,9 @@ age_of_absolutism = {
 				tag = NED
 			}
 			modifier = {
-				# TODO: Consider giving the Dutch something... not completely terrible?
-				yearly_corruption = -0.2
+				# Swapped from the corruption decay (which was awful in MP) to a trade company boost (which also just
+				# seems more fitting for the Dutch).
+				trade_company_investment_cost = -0.2
 			}
 			ai_will_do = {
 				factor = 100
@@ -824,9 +825,6 @@ age_of_revolutions = {
 				tag = HAB
 			}
 			modifier = {
-				# TODO: Consider giving the Austrians something that might actually be useful to them in MP?
-				# Kinda weird to justify giving them a military bonus though considering they got their arses repeatedly
-				# kicked by Napoleon during this timeframe. Maybe swap them to a different age and move France here?
 				diplomatic_reputation = 5
 			}
 			ai_will_do = {
