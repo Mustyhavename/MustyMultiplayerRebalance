@@ -4,9 +4,7 @@ country_decisions = {
 	# which instead takes effect over time. The professionalism decrease also happens over time. It also prevents a player spamming
 	# it.
 	
-	# TODO: If the merc mechanism isn't changed, then it would be good to add an event that fires if the modifier enabled but professionalism
-	# drops to zero, as currently a player can abuse this slightly if they're on the edge by activating this and then immediately recruiting
-	# mercenaries.
+	# IMPROVEMENT - There should be some kind of event / trigger if you have 0 professionalism but this modifier active.
 	
 	mmr_slacken_replacement_enable = {
 		potential = {

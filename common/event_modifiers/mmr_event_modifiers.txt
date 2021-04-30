@@ -13,3 +13,35 @@ mmr_slacken_replacement_modifier = {
 mmr_ruler_changed_muslim_school = {
 	# Nothing
 }
+
+# Modifiers below are vanilla modifiers which have been re-balanced.
+
+grand_captain_boost = {
+	# Nerfed from 20% to 10%
+	land_morale = 0.10
+}
+
+commandant_boost = {
+	# Nerfed from 10% to 5%
+	discipline = 0.05
+}
+
+army_reform = {
+	# Nerfed from 20% to 10%
+	land_morale = 0.10
+	mil_tech_cost_modifier = -0.10
+}
+
+naval_reform = {
+	# Nerfed from 20% to 10%
+	naval_morale = 0.10
+	dip_tech_cost_modifier = -0.10
+}
+
+military_reform = {
+	# Nerfed from 10% to 5%
+	dip_tech_cost_modifier = -0.05
+	mil_tech_cost_modifier = -0.05
+	naval_morale = 0.05
+	land_morale = 0.05
+}

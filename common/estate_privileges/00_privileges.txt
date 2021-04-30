@@ -1,5 +1,7 @@
 # This is yet another stupid file where changing a single entry with a differently named file doesn't actually work.
 # Instead you have to overwrite everything and keep the existing ones lest they disappear.
+# The main changes here are to idea groups which scale based off a single estate's land share. Scaling ones now are ONLY for special forces and nothing else.
+# Every other bonus is flat.
 
 estate_brahmins_land_rights = {
 	icon = privilege_grant_autonomy
@@ -899,7 +901,7 @@ estate_nobles_levies = {
 		NOT = { has_estate_privilege = estate_nobles_golden_liberty }
 	}
 	benefits = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.2
 	}
 	penalties = {
 		global_trade_goods_size_modifier = -0.05
@@ -1352,6 +1354,7 @@ estate_church_clerical_oversight = {
 	}
 }
 
+# Modified - instead of a 15% bonus scaling by land, it's a permanent -5%
 estate_church_inwards_perfection = {
 	icon = privilege_grant_autonomy
 	land_share = 5
@@ -1366,13 +1369,11 @@ estate_church_inwards_perfection = {
 	}
 	on_granted = {
 	}
-	modifier_by_land_ownership = {
-		development_cost = -0.15
-	}
 	penalties = {
 		stability_cost_to_declare_war = 1
 	}
 	benefits = {
+		development_cost = -0.05
 	}
 	ai_will_do = {
 		factor = 1
@@ -2607,6 +2608,7 @@ estate_maratha_loyalty_privilege = {
 	}
 }
 
+# Modified in the same way as the standard noble one (i.e. lower flat bonus with a meaningful penalty)
 estate_maratha_levies = {
 	icon = privilege_recruit_from_marathi
 	max_absolutism = -5
@@ -2614,11 +2616,11 @@ estate_maratha_levies = {
 	is_valid = {
 		NOT = { religion_group = muslim }
 	}
-	modifier_by_land_ownership = {
-		global_tax_modifier = -0.25
-		global_manpower_modifier = 1
+	benefits = {
+		global_manpower_modifier = 0.2
 	}
 	penalties = {
+		global_trade_goods_size_modifier = -0.05
 	}
 	ai_will_do = {
 		factor = 5
@@ -2751,6 +2753,8 @@ estate_maratha_levies_for_muslims = {
 	}
 }
 
+# This was insane and gave 10% discipline scaling on land ownership for only a tax penalty
+# Swapped to 5% flat discipline for 5% goods produced
 estate_maratha_special_privilege = {
 	icon = privilege_promote_maratha_nobility
 	max_absolutism = -5
@@ -2759,13 +2763,11 @@ estate_maratha_special_privilege = {
 	is_valid = {
 		has_reform = permanent_marathas_council_reform
 	}
-	modifier_by_land_ownership = {
-		discipline = 0.1
-		global_tax_modifier = -0.15
+	benefits = {
+		discipline = 0.05
 	}
 	penalties = {
-	}
-	benefits = {
+		global_trade_goods_size_modifier = -0.05
 	}
 	ai_will_do = {
 		factor = 10

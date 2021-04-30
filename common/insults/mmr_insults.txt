@@ -1,0 +1,71 @@
+mmr_insult_pvp_1 = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+mmr_insult_pvp_2 = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+mmr_insult_pvp_3 = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+mmr_insult_pvp_4 = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+mmr_insult_pvp_5 = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+mmr_insult_to_ai = {
+	trigger = {
+		ai = yes
+		FROM = { ai = no }
+	}
+}
+
+mmr_insult_from_ai = {
+	trigger = {
+		ai = no
+		FROM = { ai = yes }
+	}
+
+}
+
+mmr_insult_german_tech = {
+	trigger = {
+		FROM = {
+			is_germanic_but_not_swamp = yes
+			is_germanic_but_not_mountains = yes
+		}
+	}
+}
+
+mmr_insult_french_taunting = {
+	trigger = {
+		FROM = { culture_group = french	}
+	}
+}
+
+mmr_insult_italian_sides = {
+	trigger = {
+		culture_group = latin
+		is_at_war = yes
+	}
+}
