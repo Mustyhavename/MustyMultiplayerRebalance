@@ -26,9 +26,8 @@ aristocracy_ideas = {
 	}
 	
 	noble_knights = {
-		# Buffed both modifiers from 0.1 to 0.2
+		# Buffed cavalry power but removed cavalry cost
 		cavalry_power = 0.20
-		cavalry_cost = -0.20
 	}
 	military_traditions = {
 		mil_tech_cost_modifier  = -0.1
@@ -111,12 +110,13 @@ plutocracy_ideas = {
 	}
 }
 
-# TODO
+# A few tweaks, mostly to make the cav bonuses on par with Aristocratic
 horde_gov_ideas = {
 	category = MIL
 	
 	bonus = {
-		cavalry_power = 0.25
+		# Nerfed from 25% to 20%
+		cavalry_power = 0.20
 	}
 	
 	trigger = {
@@ -124,10 +124,13 @@ horde_gov_ideas = {
 	}
 	
 	horse_lords = {
-		cavalry_cost = -0.33
+		# Nerfed from 33% to 30%
+		cavalry_cost = -0.30
 	}
-	beyond_the_sun = {
-		ae_impact = -0.1
+	# Replaced 10% AE with some cav ratio.
+	# The 15% means if paired with Sunni you can get to 100%
+	mmr_horde_numbers = {
+		cav_to_inf_ratio = 0.1
 	}
 	mandate_of_the_khan = {
 		religious_unity = 0.25
@@ -135,8 +138,9 @@ horde_gov_ideas = {
 	there_shall_be_no_grass = {
 		land_attrition = -0.2
 	}
-	horde_loyalty = {
-		global_unrest = -1
+	# Replaced -1 RR with 10% shock damage received
+	mmr_horse_archery_tactics = {
+		shock_damage_received = -0.1
 	}
 	watchers_of_the_silk_road = {	
 		caravan_power = 0.20
@@ -150,12 +154,13 @@ horde_gov_ideas = {
 	}
 }
 
-# TODO
+# A few minor buffs but nothing that major
 theocracy_gov_ideas = {
 	category = MIL
 	
 	bonus = {
-		global_heretic_missionary_strength = 0.01
+		# Buffed heretic only chance to be global
+		global_missionary_strength = 0.01
 		church_loyalty_modifier = 0.1
 		brahmins_hindu_loyalty_modifier = 0.1
 		brahmins_muslim_loyalty_modifier = 0.1
@@ -184,7 +189,8 @@ theocracy_gov_ideas = {
 		global_unrest = -2
 	}
 	martyrs = {
-		global_manpower_modifier = 0.15
+		# Buffed from 15% to 20% (equivalent to aristocratic)
+		global_manpower_modifier = 0.2
 	}
 	ai_will_do = {
 		factor = 0.9
@@ -195,7 +201,7 @@ theocracy_gov_ideas = {
 	}
 }
 
-# TODO
+# Unchanged
 indigenous_ideas = {
 	category = MIL
 

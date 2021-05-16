@@ -26,6 +26,10 @@
  mmr_slacken_replacement_modifier:0 "Slackened Recruitment"
  mmr_trade_company_investments:0 "Trade Company Investments"
  mmr_trade_company_investments_desc:0 "Our trade companies have been a source of great revenue, and we should invest further in them and the states around them."
+ mmr_horde_numbers:0 "Horde Numbers"
+ mmr_horde_numbers_desc:0 "Our cavalry must blot out the horizon."
+ mmr_horse_archery_tactics:0 "Horse Archery Tactics"
+ mmr_horse_archery_tactics_desc:0 "With our numbers spread out harassing the enemy, we can insulate ourselves against their cavalry charges."
  # New event modifiers.
  desc_mmr_slacken_replacement_modifier:0 "Our recruiting standards have been temporarily eased. This has given us a boon in new recruits to replenish our numbers, but is having a detrimental effect on our army quality."
  mmr_ruler_changed_muslim_school:0 "Ruler changed Muslim school"
@@ -86,6 +90,8 @@
  desc_mmr_organised_development:0 "All cities and boroughs must have formal development plans in place to avoid haphazard development."
  mmr_improved_weapon_contracts:0 "Improved Weapon Contracts"
  desc_mmr_improved_weapon_contracts:0 "Using our diplomatic skill to improve communications with weapons manufacturers will greatly improve quality of the end product."
+ mmr_vassal_nobility:0 "Vassal Nobility"
+ desc_mmr_vassal_nobility:0 "A portion of the nobility of our vassal states should be mandated to serve with the main army."
  # New insults
  mmr_insult_pvp_1:0 "I don't know who you are. I don't know what you want. If you are looking for gifts I can tell you I don't have any for you, but what I do have are a very particular set of skills. Skills I have acquired over a very long career of playing map games. Skills that make me a nightmare for people like you. If you leave my country alone that'll be the end of it. I will not look for you, I will not fight you, but if you don't, I will select your nation, I will click on declare war, and I will kill you." 
  mmr_insult_pvp_2:0 "You're so bad at this game your custom nation's tradition would be colonial range."

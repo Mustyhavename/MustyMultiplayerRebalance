@@ -621,7 +621,8 @@ zealous_captains = {
 	}
 }
 
-autonomous_estates = {
+# Was autonomous estates
+mmr_vassal_nobility = {
 	monarch_power = MIL
 	
 	potential = {
@@ -634,31 +635,11 @@ autonomous_estates = {
 		full_idea_group = aristocracy_ideas
 	}	
 	
-	global_unrest = -1
-	vassal_forcelimit_bonus = 1
+	# Swapped the unrest and vassal forcelimit for cav ratio
+	cav_to_inf_ratio = 0.1
 	
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 0
-			NOT = { vassal = 1 }
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 2
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 3
-		}			
-		modifier = {
-			factor = 1.5
-			vassal = 4
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 5
-		}	
 	}
 }
 
@@ -1065,7 +1046,6 @@ deserteur_act = {
 	}
 }
 
-# TODO: Review policies
 war_horses_policy = { 
 	monarch_power = MIL
 
@@ -1079,27 +1059,11 @@ war_horses_policy = {
 		full_idea_group = expansion_ideas
 	}
 
-	army_tradition = 0.5
+	# Removed the army tradition (10% shock damage is already given in another policy by itself)
 	shock_damage = 0.1
 	
 	ai_will_do = {
 		factor = 0.75
-		modifier = {
-			factor = 0
-			NOT = { army_tradition = 2 }
-		}			
-		modifier = {
-			factor = 1.5
-			army_tradition = 30
-		}
-		modifier = {
-			factor = 1.5
-			army_tradition = 50
-		}
-		modifier = {
-			factor = 1.5
-			army_tradition = 80
-		}
 	}
 }
 
@@ -1141,7 +1105,8 @@ omne_datum_optimum_policy = {
 		full_idea_group = administrative_ideas
 	}
 
-	manpower_in_true_faith_provinces = 0.2
+	# Nerfed manpower from 20% to 15% (otherwise it was twice as good as a standard manpower buff, and most people with theocracy would convert everything anyway)
+	manpower_in_true_faith_provinces = 0.15
 	recover_army_morale_speed = 0.05
 	
 	ai_will_do = {
@@ -1191,8 +1156,9 @@ the_three_sisters_policy = {
 		full_idea_group = economic_ideas
 	}
 
+	# Nerfed the infantry cost from 15% to 10% for consistency
 	land_morale = 0.05
-	infantry_cost = -0.15
+	infantry_cost = -0.1
 	
 	ai_will_do = {
 		factor = 1.0
@@ -1216,8 +1182,9 @@ by_the_people_for_the_people_policy = {
 		full_idea_group = humanist_ideas
 	}
 
-	defensiveness = 0.25
-	garrison_size = 0.1
+	# Modified for consistency (defensiveness 25% to 20%, garrison size 10% to 25%).
+	defensiveness = 0.20
+	garrison_size = 0.25
 	
 	ai_will_do = {
 		factor = 1.0
@@ -1241,8 +1208,9 @@ war_on_our_terms_policy = {
 		full_idea_group = exploration_ideas
 	}
 
+	# Nerfed morale from 10% to 5%
 	discipline = 0.025
-	land_morale = 0.1
+	land_morale = 0.05
 	
 	ai_will_do = {
 		factor = 1.0
@@ -1266,8 +1234,9 @@ fear_tactics_policy = {
 		full_idea_group = diplomatic_ideas
 	}
 
-	shock_damage = 0.1
-	siege_ability = 0.1
+	# Swapped 10% shock and 10% siege for 10% cav ratio
+	# Mainly because they already have a 10% shock policy
+	cav_to_inf_ratio = 0.1
 	
 	ai_will_do = {
 		factor = 1.0
@@ -1291,8 +1260,9 @@ psychological_warfare_policy = {
 		full_idea_group = spy_ideas
 	}
 
-	cavalry_flanking = 0.5
-	cavalry_power = 0.1
+	# Buffed the flanking (0.5 to 1) but nerfed the power for consistency (10% to 7.5%)
+	cavalry_flanking = 1.0
+	cavalry_power = 0.075
 
 	ai_will_do = {
 		factor = 1.0
@@ -1365,8 +1335,9 @@ render_unto_caesar_policy = {
 		full_idea_group = exploration_ideas
 	}
 
-	global_manpower_modifier = 0.15
-	land_forcelimit_modifier = 0.05
+	# Nerfed manpower from 15% to 10% and buffed forcelimit from 5% to 10% for consistency
+	global_manpower_modifier = 0.10
+	land_forcelimit_modifier = 0.10
 
 	ai_will_do = {
 		factor = 1.0

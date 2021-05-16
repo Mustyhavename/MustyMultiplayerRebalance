@@ -1408,7 +1408,6 @@ anti_heresy_act = {
 	}
 }
 
-# TODO - Review policies below
 steppe_supplies_policy = {
 	monarch_power = ADM
 	
@@ -1422,8 +1421,9 @@ steppe_supplies_policy = {
 		full_idea_group = horde_gov_ideas
 	}
 	
+	# Nerfed manpower recovery from 15% to 10%
 	global_manpower_modifier = 0.1
-	manpower_recovery_speed = 0.15
+	manpower_recovery_speed = 0.1
 	
 	ai_will_do = {
 		factor = 1
@@ -1469,7 +1469,8 @@ calming_the_tides_policy = {
 		full_idea_group = horde_gov_ideas
 	}
 	
-	global_unrest = -2
+	# Nerfed from 2 to 1 to be consistent with other policies
+	global_unrest = -1
 	prestige = 0.5
 	
 	ai_will_do = {
@@ -1583,8 +1584,9 @@ religious_spread_policy = {
 		full_idea_group = theocracy_gov_ideas
 	}
 	
+	# Nerfed maint from 15% to 10%
 	global_missionary_strength = 0.01
-	missionary_maintenance_cost = -0.15
+	missionary_maintenance_cost = -0.1
 	
 	ai_will_do = {
 		factor = 1
@@ -1665,8 +1667,9 @@ ora_et_labora_policy = {
 		full_idea_group = theocracy_gov_ideas
 	}
 	
+	# Buffed attrition from 20% to 25% to be consistent with other policies
 	global_trade_goods_size_modifier = 0.05
-	land_attrition = -0.2
+	land_attrition = -0.25
 	
 	ai_will_do = {
 		factor = 0.6
@@ -1706,8 +1709,9 @@ administration_of_sacred_land_policy = {
 		full_idea_group = indigenous_ideas
 	}
 	
-	land_maintenance_modifier = -0.1
-	development_cost = -0.1
+	# Nerfed both bonuses from 10% to 5%
+	land_maintenance_modifier = -0.05
+	development_cost = -0.05
 	
 	ai_will_do = {
 		factor = 1
@@ -1747,7 +1751,8 @@ shared_land_policy = {
 		full_idea_group = indigenous_ideas
 	}
 	
-	build_cost = -0.15
+	# Buffed from 15% to 20%
+	build_cost = -0.2
 
 	ai_will_do = {
 		factor = 1

@@ -18,8 +18,6 @@ patriarch_authority_local = {
 # Make scorching now give attrition.
 # Note that adding a supply limit reduction would be nice. However, percentages are additive, and technology gives a huge percentages
 # bonus over time, so a 50% supply limit modifier only affects the base cost of a province. 
-# TODO: As this is more powerful, cost should likely be increased as 5 mil is pretty cheap for this, especially if you stick this on
-# a mountain fort with ramparts.
 
 scorched_earth = {
 	local_hostile_movement_speed = -0.50
@@ -31,11 +29,9 @@ scorched_earth = {
 #	- 20% maintenance nerfed to 10%
 
 militarized_society = {
-
 	discipline = 0.05
 	manpower_recovery_speed = 0.20
 	land_maintenance_modifier = -0.10
-
 }
 
 # Tweaks to the revolution target (mostly nerfs)
