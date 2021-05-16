@@ -276,7 +276,7 @@ age_of_reformation = {
 		}
 		
 		obj_colonial_empire = {
-			colony = 5
+			num_of_colonies = 5
 		}
 		
 		obj_force_converted = {
@@ -290,6 +290,10 @@ age_of_reformation = {
 			OR = {
 				trading_bonus = {
 					trade_goods = spices
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = cloves
 					value = yes
 				}
 				trading_bonus = {
@@ -421,8 +425,8 @@ age_of_reformation = {
 				}
 			}
 			modifier = {
-				# Nerfed from 33% to 22%
-				global_trade_goods_size_modifier = 0.33
+				# Nerfed from 33% to 20%
+				global_trade_goods_size_modifier = 0.2
 			}
 			ai_will_do = {
 				factor = 100
