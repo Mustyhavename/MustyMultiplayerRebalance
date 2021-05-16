@@ -1,5 +1,6 @@
 estate_dhimmi = {
 	icon = 6
+	other_religion_group_only = yes
 
 	province_independence_weight = {
 		factor = 1
@@ -20,7 +21,6 @@ estate_dhimmi = {
 		NOT = { government = native }
 		NOT = { has_reform = siberian_tribe }
 		is_nomad = no
-		NOT = { technology_group = western }
 		religion_group = muslim
 	}
 
