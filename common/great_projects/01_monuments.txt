@@ -1,3 +1,6 @@
+# A lot of the modifiers in here are just plain broken in MP
+# This is a copy of the file with several changes made
+
 hagia_sophia = {
 	# province it starts in
 	start = 151
@@ -819,7 +822,7 @@ buddha_statues = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			culture_conversion_cost = -0.1
+			# Removed culture conversion cost
 			global_missionary_strength = 0.01
 		}
 
@@ -849,7 +852,7 @@ buddha_statues = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			culture_conversion_cost = -0.10
+			# Removed culture conversion cost
 			global_missionary_strength = 0.01
 			missionaries = 1
 		}
@@ -880,7 +883,8 @@ buddha_statues = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			culture_conversion_cost = -0.25
+			# Nerfed culture conversion cost from 25% to 10%
+			culture_conversion_cost = -0.1
 			global_missionary_strength = 0.01
 			missionaries = 1
 		}
@@ -1019,7 +1023,8 @@ parthenon = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			advisor_cost = -0.10
+			# Nerfed from 10% to 2.5%
+			advisor_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -1049,7 +1054,8 @@ parthenon = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			advisor_cost = -0.1
+			# Nerfed from 10% to 2.5%
+			advisor_cost = -0.025
 			advisor_pool = 1
 		}
 
@@ -1080,9 +1086,9 @@ parthenon = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			advisor_cost = -0.2
+			# Nerfed advisor from 10% to 5% and removed the corruption bonus
+			advisor_cost = -0.05
 			advisor_pool = 1
-			yearly_corruption = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -1429,8 +1435,8 @@ angkor_wat = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			yearly_karma_decay = 0.05  #(buddhist)
-			technology_cost = -0.05
+			# Removed tech cost - increased the karma decay to match T2
+			yearly_karma_decay = 0.1  #(buddhist)
 		}
 
 		#what effects happen when this tier is achieved
@@ -1463,8 +1469,9 @@ angkor_wat = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nerfed tech cost from 10% to 2.5%
 			yearly_karma_decay = 0.1  #(buddhist)
-			technology_cost = -0.1
+			technology_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -1497,8 +1504,9 @@ angkor_wat = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			yearly_karma_decay = 0.15  #(buddhist)
-			technology_cost = -0.10
+			# Nerfed tech cost from 10% to 5%
+			yearly_karma_decay = 0.1  #(buddhist)
+			technology_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -1638,8 +1646,8 @@ petra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			diplomatic_reputation = 1
-			envoy_travel_time = -0.20
+			# Removed dip rep and halved the travel time bonus
+			envoy_travel_time = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -1668,9 +1676,8 @@ petra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			diplomatic_reputation = 1
-			envoy_travel_time = -0.25
-			fabricate_claims_cost = -0.1
+			# Removed dip rep and fabricate claims
+			envoy_travel_time = -0.2
 		}
 
 		#what effects happen when this tier is achieved
@@ -1699,10 +1706,9 @@ petra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			diplomatic_reputation = 2
-			envoy_travel_time = -0.33
-			diplomatic_upkeep = 1
-			fabricate_claims_cost = -0.2
+			# Removed dip upkeep and fabricate claims, nerfed the others
+			diplomatic_reputation = 1
+			envoy_travel_time = -0.2
 		}
 
 		#what effects happen when this tier is achieved
@@ -1852,7 +1858,7 @@ cologne_cathedral = {
 			papal_influence = 1
 			monthly_fervor_increase = 0.5
 			church_power_modifier = 0.1
-			enforce_religion_cost = -0.25
+			enforce_religion_cost = -0.2 # Nerfed from 25% to 20%
 		}
 
 		#what effects happen when this tier is achieved
@@ -1888,7 +1894,7 @@ cologne_cathedral = {
 			papal_influence = 2
 			monthly_fervor_increase = 1
 			church_power_modifier = 0.15
-			enforce_religion_cost = -0.33
+			enforce_religion_cost = -0.3 # Nerfed from 33% to 30%
 		}
 
 		#what effects happen when this tier is achieved
@@ -2197,7 +2203,8 @@ machu_picchu = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			idea_cost = -0.05
+			# Nerfed ideas from 5% to 2.5%
+			idea_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -2230,7 +2237,8 @@ machu_picchu = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			idea_cost = -0.1
+			# Nerfed ideas from 5% to 2.5%
+			idea_cost = -0.025
 			reform_progress_growth = 0.1			
 		}
 
@@ -2264,9 +2272,9 @@ machu_picchu = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			idea_cost = -0.15
+			# Nerfed ideas from 15% to 5%, removed mercantlism cost
+			idea_cost = -0.05
 			reform_progress_growth = 0.1
-			mercantilism_cost = -0.15
 		}
 
 		#what effects happen when this tier is achieved
@@ -2397,8 +2405,8 @@ chichen_itza = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			manpower_recovery_speed = 0.1
-			global_regiment_recruit_speed = -0.1
+			# Nerfed manpower recovery from 10% to 5%, removed recruiting speed
+			manpower_recovery_speed = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -2431,8 +2439,8 @@ chichen_itza = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			manpower_recovery_speed = 0.15
-			global_regiment_recruit_speed = -0.3
+			# Nerfed manpower recovery from 15% to 10%, removed recruiting speed
+			manpower_recovery_speed = 0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -2465,8 +2473,8 @@ chichen_itza = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			manpower_recovery_speed = 0.2
-			global_regiment_recruit_speed = -0.5
+			# Removed recruitment speed, nerfed manpower speed to 10%
+			manpower_recovery_speed = 0.1
 			infantry_cost = -0.10
 		}
 
@@ -2767,8 +2775,10 @@ moai = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			religious_unity = 0.05
-			tolerance_own = 0.5
+			# Random statues giving you tolerance makes no sense - let's give some prestige instead
+			prestige = 0.25
+			#religious_unity = 0.05
+			#tolerance_own = 0.5
 		}
 
 		#what effects happen when this tier is achieved
@@ -2797,8 +2807,9 @@ moai = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			religious_unity = 0.10
-			tolerance_own = 1
+			# Random statues giving you tolerance makes no sense - let's give some prestige and colonial growth instead
+			prestige = 0.25
+			global_colonial_growth = 10
 		}
 
 		#what effects happen when this tier is achieved
@@ -2831,9 +2842,9 @@ moai = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			religious_unity = 0.25
-			tolerance_own = 1
-			tolerance_heretic = 1
+			# Random statues giving you tolerance makes no sense - let's give some prestige and colonial growth instead
+			prestige = 0.5
+			global_colonial_growth = 10
 		}
 
 		#what effects happen when this tier is achieved
@@ -2985,9 +2996,9 @@ stpeters_cathedral = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed idea cost
 			appoint_cardinal_cost = -0.1
 			curia_powers_cost = -0.1
-			idea_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -3020,9 +3031,10 @@ stpeters_cathedral = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nerfed idea cost from 10% to 5%
 			appoint_cardinal_cost = -0.2
 			curia_powers_cost = -0.1
-			idea_cost = -0.1
+			idea_cost = -0.05
 			church_influence_modifier = 0.1
 		}
 
@@ -4001,7 +4013,8 @@ the_great_wall_of_china = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			hostile_attrition = 1
+			# Swapped out the attrition for defensiveness
+			defensiveness = 0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -4033,7 +4046,8 @@ the_great_wall_of_china = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			hostile_attrition = 2
+			# Swapped out the attrition for defensiveness
+			defensiveness = 0.2
 		}
 
 		#what effects happen when this tier is achieved
@@ -4343,7 +4357,8 @@ mesa_verde = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			technology_cost = -0.05
+			# Nerfed tech cost from 5% to 2.5%
+			technology_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -4373,8 +4388,9 @@ mesa_verde = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {	
-			idea_cost = -0.05
-			technology_cost = -0.05
+			# Nerfed tech + idea cost from 5% to 2.5%
+			idea_cost = -0.025
+			technology_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -4404,8 +4420,9 @@ mesa_verde = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			idea_cost = -0.1
-			technology_cost = -0.1
+			# Nerfed from 10% to 5%
+			idea_cost = -0.05
+			technology_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -4731,8 +4748,8 @@ alhambra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed the libery desire
 			vassal_income = 0.1
-			reduced_liberty_desire = 5
 		}
 
 		#what effects happen when this tier is achieved
@@ -4761,9 +4778,9 @@ alhambra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			vassal_income = 0.1
+			# Removed the dip rep, increased vassal income
+			vassal_income = 0.2
 			reduced_liberty_desire = 5
-			diplomatic_reputation = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -4792,8 +4809,8 @@ alhambra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			administrative_efficiency = 0.05
-			vassal_income = 0.1
+			# Removed the admin efficiency, increased vassal income
+			vassal_income = 0.3
 			reduced_liberty_desire = 10
 			diplomatic_reputation = 1
 		}
@@ -4940,8 +4957,9 @@ the_grand_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nerfed governing capacity from 10% to 5%
 			yearly_absolutism = 0.5
-			governing_capacity_modifier = 0.1
+			governing_capacity_modifier = 0.05
 			vassal_forcelimit_bonus = 0.30
 		}
 
@@ -4971,10 +4989,10 @@ the_grand_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed the AE impact and nerfed governing capacity from 15% to 10%
 			yearly_absolutism = 1
-			governing_capacity_modifier = 0.15
+			governing_capacity_modifier = 0.10
 			vassal_forcelimit_bonus = 0.5
-			ae_impact = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -5160,9 +5178,9 @@ bagan_temples = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed the missionary
 			monthly_karma = 0.15
 			global_missionary_strength = 0.01
-			missionaries = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -5192,9 +5210,10 @@ bagan_temples = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Reduced missionaries from 2 to 1
 			monthly_karma = 0.2
 			global_missionary_strength = 0.02
-			missionaries = 2
+			missionaries = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -5340,7 +5359,8 @@ ait_benhaddou = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			caravan_power = 0.2
+			# Nerfed caravan power from 20% to 10%
+			caravan_power = 0.1
 			trade_efficiency = 0.05
 		}
 
@@ -5371,9 +5391,9 @@ ait_benhaddou = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			caravan_power = 0.33
+			# Nerfed caravan power from 33% to 20%, removed global trade power
+			caravan_power = 0.2
 			trade_efficiency = 0.10
-			global_trade_power = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -5523,7 +5543,7 @@ registan_square = {
 		country_modifiers = {
 			monthly_piety = 0.002
 			stability_cost_modifier = -0.15
-			enforce_religion_cost = -0.1
+			warscore_cost_vs_other_religion = -0.05 # Was enforce religion cost but this was absent from T3
 		}
 
 		#what effects happen when this tier is achieved
@@ -5552,9 +5572,10 @@ registan_square = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nerfed warscore from 15% to 10%
 			monthly_piety = 0.003
 			stability_cost_modifier = -0.25
-			warscore_cost_vs_other_religion = -0.15
+			warscore_cost_vs_other_religion = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -5703,8 +5724,9 @@ golden_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nerfed min autonomy from 10% to 5%
 			global_autonomy = -0.05
-			min_autonomy_in_territories = -0.1
+			min_autonomy_in_territories = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -5734,8 +5756,9 @@ golden_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nered min autonomy from 15% to 10%
 			global_autonomy = -0.1
-			min_autonomy_in_territories = -0.15
+			min_autonomy_in_territories = -0.1
 			
 		}
 
@@ -5890,7 +5913,7 @@ jokhang_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			religious_unity = 0.05
+			# Removed religious unity
 			missionary_maintenance_cost = -0.1
 		}
 
@@ -5920,9 +5943,9 @@ jokhang_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			religious_unity = 0.10
+			# Removed religious unity and nerfed cost
 			global_missionary_strength = 0.01
-			missionary_maintenance_cost = -0.2
+			missionary_maintenance_cost = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -5951,9 +5974,9 @@ jokhang_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			religious_unity = 0.25
+			# Removed religious unity and nerfed cost
 			global_missionary_strength = 0.02
-			missionary_maintenance_cost = -0.3
+			missionary_maintenance_cost = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -6158,7 +6181,8 @@ borobudur_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			culture_conversion_cost = -0.1
+			# Nerfed from 10% to 5%
+			culture_conversion_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -6188,7 +6212,8 @@ borobudur_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			culture_conversion_cost = -0.25
+			# Nerfed from 25% to 10%
+			culture_conversion_cost = -0.1
 			num_accepted_cultures = 1
 		}
 
@@ -6307,8 +6332,8 @@ temple_of_confucius = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed prestige
 			yearly_harmony = 0.25
-			prestige = 0.25
 		}
 
 		#what effects happen when this tier is achieved
@@ -6341,9 +6366,9 @@ temple_of_confucius = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed prestige, unity nerfed to 5%
 			yearly_harmony = 0.33
-			religious_unity = 0.25
-			prestige = 0.5
+			religious_unity = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -6376,9 +6401,9 @@ temple_of_confucius = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed prestige, unity nerfed to 10%
 			yearly_harmony = 0.5
-			religious_unity = 0.5
-			prestige = 1
+			religious_unity = 0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -6497,8 +6522,8 @@ murud_janjira = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			naval_forcelimit_modifier = 0.1
-			naval_maintenance_modifier = -0.1
+			# Removed naval maint and reduced forcelimit
+			naval_forcelimit_modifier = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -6527,9 +6552,8 @@ murud_janjira = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			naval_forcelimit_modifier = 0.2
-			naval_maintenance_modifier = -0.15
-			navy_tradition = 0.5
+			# Removed naval maint and tradition, reduced force limit
+			naval_forcelimit_modifier = 0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -6558,10 +6582,9 @@ murud_janjira = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			naval_forcelimit_modifier = 0.3
-			naval_maintenance_modifier = -0.2
-			navy_tradition = 1
-			admiral_cost = -0.1
+			# Removed naval maint and tradition, nerfed force limit from 30% to 15%, buffed admiral cost from 10% to 20%
+			naval_forcelimit_modifier = 0.15
+			admiral_cost = -0.2
 		}
 
 		#what effects happen when this tier is achieved
@@ -6858,8 +6881,8 @@ kanbawzathadi_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed dip advisor cost
 			diplomatic_reputation = 1
-			dip_advisor_cost = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -6888,9 +6911,9 @@ kanbawzathadi_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			diplomatic_reputation = 2
-			diplomatic_upkeep = 1
-			dip_advisor_cost = -0.2
+			# Removed dip upkeep, nerfed dip advisor cost from 20% to 10%
+			diplomatic_reputation = 1
+			dip_advisor_cost = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -6919,9 +6942,10 @@ kanbawzathadi_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			diplomatic_reputation = 2
-			diplomatic_upkeep = 2
-			advisor_cost = -0.2
+			# Nerfed dip rep and upkeep, changed advisor cost to dip specific
+			diplomatic_reputation = 1
+			diplomatic_upkeep = 1
+			dip_advisor_cost = -0.2
 		}
 
 		#what effects happen when this tier is achieved
@@ -7093,7 +7117,8 @@ pyramid_of_cheops = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			advisor_cost = -0.1
+			# Nerfed advisor cost from 10% to 5%
+			advisor_cost = -0.05
 			church_loyalty_modifier = 0.1
 			idea_cost = -0.05			
 		}
@@ -7124,7 +7149,8 @@ pyramid_of_cheops = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			advisor_cost = -0.2
+			# Nerfed advisor cost from 20% to 10%
+			advisor_cost = -0.1
 			church_loyalty_modifier = 0.15
 			idea_cost = -0.05
 		}
@@ -7271,7 +7297,8 @@ khami_ruins = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			technology_cost = -0.05
+			# Swapped the tech cost with the fabricate claims
+			fabricate_claims_cost = -0.25
 		}
 
 		#what effects happen when this tier is achieved
@@ -7420,8 +7447,8 @@ prambanan_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			development_cost = -0.02
-			global_missionary_strength =  0.005
+			# Removed missionary strength and buffed dev cost to 2.5%
+			development_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -7450,7 +7477,8 @@ prambanan_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			development_cost = -0.05
+			# Nerfed dev cost to 2.5%
+			development_cost = -0.025
 			global_missionary_strength = 0.01
 		}
 
@@ -7480,9 +7508,9 @@ prambanan_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			development_cost = -0.10
+			# Nerfed dev cost from 10% to 5% and removed the extra missionary
+			development_cost = -0.05
 			global_missionary_strength = 0.02
-			missionaries = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -7773,8 +7801,8 @@ fire_temple_of_ateshgah = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed fire received
 			discipline = 0.025
-			fire_damage_received = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -7803,8 +7831,9 @@ fire_temple_of_ateshgah = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Nerfed fire received
 			discipline = 0.025
-			fire_damage_received = -0.1
+			fire_damage_received = -0.05
 			culture_conversion_cost = -0.05
 		}
 
@@ -7834,9 +7863,9 @@ fire_temple_of_ateshgah = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed the fire damage
 			discipline = 0.05
 			fire_damage_received = -0.1
-			fire_damage = 0.05			
 			culture_conversion_cost = -0.1
 		}
 
@@ -8712,9 +8741,9 @@ heddal_stave_church = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed the missionary
 			stability_cost_modifier = -0.05
 			missionary_maintenance_cost = -0.1
-			missionaries = 1
 		}
 
 		#what effects happen when this tier is achieved
