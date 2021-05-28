@@ -667,7 +667,7 @@ vassal_obligations_act = {
 	}	
 	
 	# Swapped the 25% vassal tax for 10% manpower
-	global_manpower = 0.1
+	global_manpower_modifier = 0.1
 	vassal_forcelimit_bonus = 1
 	
 	ai_will_do = {
