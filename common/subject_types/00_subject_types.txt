@@ -1,3 +1,6 @@
+
+# NOTE: This is a copy of the Paradox file with modifications to the colony types.
+
 # OBS! Full modding not supported. Code support still needed to remove/rename the original subject types.
 # Custom ones CAN be created with scriptable diplomatic actions (see "dummy" at the bottom of this file), although this is not currently very functional.
 
@@ -493,6 +496,8 @@ colony = {
 	subject_opinion_modifier = colonial_relation
 }
 
+# Land bonuses cut drastically (from 100% bonuses and 50% to overlord to 40% bonus with 20% to overlord)
+# Naval / sailor bonuses removed entirely
 crown_colony = {
 	copy_from = colony
 
@@ -501,14 +506,14 @@ crown_colony = {
 	is_colony_subtype = yes
 	can_send_missionary_to_subject = yes	
 
-	forcelimit_bonus = 1.0
-	forcelimit_to_overlord = 0.5
-	manpower_bonus = 1.0
-	manpower_to_overlord = 0.5
-	naval_forcelimit_bonus = 0.5
-	naval_forcelimit_to_overlord = 0.05
-	sailors_bonus = 0.5
-	sailors_to_overlord = 0.05
+	forcelimit_bonus = 0.4
+	forcelimit_to_overlord = 0.2
+	manpower_bonus = 0.4
+	manpower_to_overlord = 0.2
+	naval_forcelimit_bonus = 0.0
+	naval_forcelimit_to_overlord = 0.0
+	sailors_bonus = 0.0
+	sailors_to_overlord = 0.0
 
 	# Subject Interactions:
 	embargo_rivals = yes
@@ -530,6 +535,7 @@ crown_colony = {
 	}
 }
 
+# Naval bonuses cut drastically (from 100% bonuses and 50% to overlord to 40% bonus with 20% to overlord)
 private_enterprise = {
 	copy_from = colony
 
@@ -541,10 +547,10 @@ private_enterprise = {
 	forcelimit_to_overlord = 0.0
 	manpower_bonus = 0.0
 	manpower_to_overlord = 0.0
-	naval_forcelimit_bonus = 1.0
-	naval_forcelimit_to_overlord = 0.5
-	sailors_bonus = 1.0
-	sailors_to_overlord = 0.5
+	naval_forcelimit_bonus = 0.4
+	naval_forcelimit_to_overlord = 0.2
+	sailors_bonus = 0.4
+	sailors_to_overlord = 0.2
 
 	# Subject Interactions:
 	replace_governor = no
@@ -561,6 +567,7 @@ private_enterprise = {
 	}
 }
 
+# Unlike the others, this one is unchanged.
 self_governing_colony = {
 	copy_from = colony
 
