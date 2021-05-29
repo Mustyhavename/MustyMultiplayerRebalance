@@ -1,7 +1,7 @@
 # The following republics in vanilla do not get any estates, whereas in this mod they do.
 # In exchange, they have been given governing capacity modifier reductions.
 #	- Merchant / Venetian republics get -30%
-#	- Pirate republic no longer gets +75% cost (which was in itself crippling) but gets -60% capacity (which is initially worse than before
+#	- Pirate republic no longer gets +75% cost (which was in itself crippling) but gets -67% capacity (which is initially worse than before
 #	but buildings will work and taking expansion will give them a sizeable buff).
 #	- Veche republic + Cossacks no longer gets a flat +50 bonus but get -10%
 
@@ -165,7 +165,7 @@ pirate_republic_reform = {
 		max_absolutism = -50
 		naval_forcelimit_modifier = 0.5
 		capture_ship_chance = 0.33
-		governing_capacity_modifier = -0.6
+		governing_capacity_modifier = -0.67
 		may_perform_slave_raid_on_same_religion = yes
 	}
 	trigger = {
