@@ -496,7 +496,11 @@ colony = {
 	subject_opinion_modifier = colonial_relation
 }
 
-# Land bonuses cut drastically (from 100% bonuses and 50% to overlord to 40% bonus with 20% to overlord)
+# The bonuses below are split into "bonus" and "to_overlord". The colonial nations do not actually get the bonus, and the overlord
+# percentage is done relative to the bonus. Basically, the actual geniune bonus is the two multiplied together and the colonial nation
+# gets nothing. For simplicty, the bonuses are kept at 1.
+
+# Land bonuses cut drastically (down from 50% to 20%).
 # Naval / sailor bonuses removed entirely
 crown_colony = {
 	copy_from = colony
@@ -506,9 +510,9 @@ crown_colony = {
 	is_colony_subtype = yes
 	can_send_missionary_to_subject = yes	
 
-	forcelimit_bonus = 0.4
+	forcelimit_bonus = 1.0
 	forcelimit_to_overlord = 0.2
-	manpower_bonus = 0.4
+	manpower_bonus = 1.0
 	manpower_to_overlord = 0.2
 	naval_forcelimit_bonus = 0.0
 	naval_forcelimit_to_overlord = 0.0
@@ -535,7 +539,7 @@ crown_colony = {
 	}
 }
 
-# Naval bonuses cut drastically (from 100% bonuses and 50% to overlord to 40% bonus with 20% to overlord)
+# Naval bonuses cut drastically (down from 50% to 20%).
 private_enterprise = {
 	copy_from = colony
 
@@ -547,9 +551,9 @@ private_enterprise = {
 	forcelimit_to_overlord = 0.0
 	manpower_bonus = 0.0
 	manpower_to_overlord = 0.0
-	naval_forcelimit_bonus = 0.4
+	naval_forcelimit_bonus = 1.0
 	naval_forcelimit_to_overlord = 0.2
-	sailors_bonus = 0.4
+	sailors_bonus = 1.0
 	sailors_to_overlord = 0.2
 
 	# Subject Interactions:
@@ -567,7 +571,7 @@ private_enterprise = {
 	}
 }
 
-# Unlike the others, this one is unchanged.
+# This was ridiculously poor before and only gave 0.05% (0.1 x 0.05 bonuses). Change that to 5% for everything.
 self_governing_colony = {
 	copy_from = colony
 
@@ -575,13 +579,13 @@ self_governing_colony = {
 	upgrade_subject_type = yes
 	is_colony_subtype = yes
 
-	forcelimit_bonus = 0.1
+	forcelimit_bonus = 1.0
 	forcelimit_to_overlord = 0.05
-	manpower_bonus = 0.1
+	manpower_bonus = 1.0
 	manpower_to_overlord = 0.05
-	naval_forcelimit_bonus = 0.1
+	naval_forcelimit_bonus = 1.0
 	naval_forcelimit_to_overlord = 0.05
-	sailors_bonus = 0.1
+	sailors_bonus = 1.0
 	sailors_to_overlord = 0.05
 
 	# Subject Interactions:
