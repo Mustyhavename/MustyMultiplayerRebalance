@@ -66,7 +66,7 @@
  # New policies
  mmr_improved_noble_equipment:0 "Improved Noble Equipment"
  desc_mmr_improved_noble_equipment:0 "By focusing our economic development on producing better equipement for our nobles the quality of our cavalry can be increased."
- mmr_army_cost_optimisations:0 "Army Cost Optimsiations"
+ mmr_army_cost_optimisations:0 "Army Cost Optimisations"
  desc_mmr_army_cost_optimisations:0 "Bringing in efficiencies of scale into procurement of equipement will reduce the cost of recruiting men and enable us to have a larger army."
  mmr_vassal_labourers:0 "Vassal Labourers"
  desc_mmr_vassal_labourers:0 "Citizens from our vassals can be recruited to work in both our armed forces and our industries."
