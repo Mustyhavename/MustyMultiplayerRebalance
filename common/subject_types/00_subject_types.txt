@@ -509,6 +509,7 @@ crown_colony = {
 	upgrade_subject_type = yes
 	is_colony_subtype = yes
 	can_send_missionary_to_subject = yes	
+	count = colony
 
 	forcelimit_bonus = 1.0
 	forcelimit_to_overlord = 0.2
@@ -546,6 +547,7 @@ private_enterprise = {
 	change_colonial_type = yes
 	upgrade_subject_type = yes
 	is_colony_subtype = yes
+	count = colony
 
 	forcelimit_bonus = 0.0
 	forcelimit_to_overlord = 0.0
@@ -578,6 +580,7 @@ self_governing_colony = {
 	change_colonial_type = yes
 	upgrade_subject_type = yes
 	is_colony_subtype = yes
+	count = colony
 
 	forcelimit_bonus = 1.0
 	forcelimit_to_overlord = 0.05

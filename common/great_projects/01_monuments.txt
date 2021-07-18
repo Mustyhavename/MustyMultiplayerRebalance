@@ -39,11 +39,15 @@ hagia_sophia = {
 				religion = coptic
 				has_owner_religion = yes
 			}			
-			AND= {
+			AND = {
 				religion_group = muslim
 				has_owner_religion = yes
 			}
-		}		
+			AND = {
+				religion = catholic
+				has_owner_religion = yes
+			}
+		}			
 	}
 
 	#what to do when it's built
@@ -80,6 +84,10 @@ hagia_sophia = {
 				religion_group = muslim
 				has_owner_religion = yes
 			}
+			AND = {
+				religion = catholic
+				has_owner_religion = yes
+			}
 		}		
 	}
 
@@ -96,6 +104,10 @@ hagia_sophia = {
 			}			
 			AND= {
 				religion_group = muslim
+				has_owner_religion = yes
+			}
+			AND = {
+				religion = catholic
 				has_owner_religion = yes
 			}
 		}		
@@ -172,7 +184,7 @@ hagia_sophia = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -188,14 +200,17 @@ hagia_sophia = {
 			tolerance_own = 0.5
 			tolerance_heretic = 0.5
 			monthly_piety = 0.001
-			yearly_patriarch_authority = 0.001
+			yearly_patriarch_authority = 0.002
+			papal_influence = 0.5
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -208,7 +223,7 @@ hagia_sophia = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -224,14 +239,17 @@ hagia_sophia = {
 			tolerance_own = 1
 			tolerance_heretic = 1
 			monthly_piety = 0.002
-			yearly_patriarch_authority = 0.002
+			yearly_patriarch_authority = 0.005
+			papal_influence = 1
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 10
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 10
+				}
 			}
 		}
 	}
@@ -396,7 +414,7 @@ stonehenge = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -427,7 +445,7 @@ stonehenge = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -620,7 +638,7 @@ tower_of_london = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -651,7 +669,7 @@ tower_of_london = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -839,7 +857,7 @@ buddha_statues = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -870,7 +888,7 @@ buddha_statues = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -924,46 +942,70 @@ parthenon = {
 
 	#can we build it?
 	build_trigger = {
-		culture = greek	
-		AND = {
-			OR = {
+		OR = {
+			AND = {
 				religion_group = pagan
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes
+				has_owner_religion = yes
 			}
-		}
+			AND = {
+				culture = greek
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+		}	
 	}
 
 	#what to do when it's built
 	on_built = {
-		show_ambient_object = parthenon
+		if = {
+			limit = { 
+				has_global_flag = parthenon_now_mosque 
+			}
+			show_ambient_object = parthenon_minaret
+		}
+		else = {
+			show_ambient_object = parthenon
+		}
 	}
 	
 	#what to do when it's destroyed
 	on_destroyed = {
+		hide_ambient_object = parthenon_minaret
 		hide_ambient_object = parthenon
 	}
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture = greek	
-		AND = {
-			OR = {
+		OR = {
+			AND = {
 				religion_group = pagan
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes
+				has_owner_religion = yes
+			}
+			AND = {
+				culture = greek
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
 			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture = greek	
-		AND = {
-			OR = {
+		OR = {
+			AND = {
 				religion_group = pagan
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes
+				has_owner_religion = yes
+			}
+			AND = {
+				culture = greek
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
 			}
 		}
 	}
@@ -1040,7 +1082,7 @@ parthenon = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1072,7 +1114,7 @@ parthenon = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1223,7 +1265,7 @@ forbidden_city = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1254,7 +1296,7 @@ forbidden_city = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1441,9 +1483,11 @@ angkor_wat = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -1456,7 +1500,7 @@ angkor_wat = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1476,10 +1520,6 @@ angkor_wat = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 10
-			}
 		}
 	}
 
@@ -1491,7 +1531,7 @@ angkor_wat = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1511,9 +1551,11 @@ angkor_wat = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -1549,12 +1591,20 @@ petra = {
 	#can we build it?
 	build_trigger = {
 		OR = {
-			religion = sunni
-			religion_group = christian
-		}
-		OR = {
-			culture = al_suryah_arabic
-			culture = bedouin_arabic
+			AND = {
+				culture = al_suryah_arabic
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+			AND = {
+				culture = bedouin_arabic
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
 		}
 	}
 
@@ -1571,24 +1621,40 @@ petra = {
 	#can our country use it?
 	can_use_modifiers_trigger = {
 		OR = {
-			religion = sunni
-			religion_group = christian
-		}
-		OR = {
-			culture = al_suryah_arabic
-			culture = bedouin_arabic
+			AND = {
+				culture = al_suryah_arabic
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+			AND = {
+				culture = bedouin_arabic
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
 		OR = {
-			religion = sunni
-			religion_group = christian
-		}
-		OR = {
-			culture = al_suryah_arabic
-			culture = bedouin_arabic
+			AND = {
+				culture = al_suryah_arabic
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+			AND = {
+				culture = bedouin_arabic
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
+				}
+			}
 		}
 	}
 
@@ -1663,7 +1729,7 @@ petra = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1693,7 +1759,7 @@ petra = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1842,7 +1908,7 @@ cologne_cathedral = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1863,9 +1929,11 @@ cologne_cathedral = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -1878,7 +1946,7 @@ cologne_cathedral = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1899,9 +1967,11 @@ cologne_cathedral = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -2006,7 +2076,7 @@ kremlin = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			local_defensiveness = 0.15
-			local_manpower_modifier = 0.15
+			local_manpower_modifier = 0.25
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2030,13 +2100,13 @@ kremlin = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			local_defensiveness = 0.25
-			local_manpower_modifier = 0.2
+			local_manpower_modifier = 0.5
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2060,13 +2130,13 @@ kremlin = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			local_defensiveness = 0.33
-			local_manpower_modifier = 0.5
+			local_manpower_modifier = 1
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2209,9 +2279,11 @@ machu_picchu = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -2224,7 +2296,7 @@ machu_picchu = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2244,10 +2316,6 @@ machu_picchu = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 10
-			}
 		}
 	}
 
@@ -2259,7 +2327,7 @@ machu_picchu = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2279,9 +2347,11 @@ machu_picchu = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -2411,9 +2481,11 @@ chichen_itza = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -2426,7 +2498,7 @@ chichen_itza = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2445,9 +2517,11 @@ chichen_itza = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 10
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
 			}
 		}
 	}
@@ -2460,7 +2534,7 @@ chichen_itza = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2480,9 +2554,11 @@ chichen_itza = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -2611,7 +2687,7 @@ himeji_castle = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2643,7 +2719,7 @@ himeji_castle = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2653,7 +2729,7 @@ himeji_castle = {
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
 		area_modifier = {
-			local_defensiveness = 0.25			
+			local_defensiveness = 0.5			
 		}
 
 		#what modifiers are added to the country when we have this project here on this tier
@@ -2794,7 +2870,7 @@ moai = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2814,9 +2890,11 @@ moai = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -2829,7 +2907,7 @@ moai = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2968,10 +3046,6 @@ stpeters_cathedral = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 10
-			}
 		}
 	}
 
@@ -2983,7 +3057,7 @@ stpeters_cathedral = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3003,9 +3077,11 @@ stpeters_cathedral = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -3018,7 +3094,7 @@ stpeters_cathedral = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3040,9 +3116,11 @@ stpeters_cathedral = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 20
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 20
+				}
 			}
 		}
 	}
@@ -3198,7 +3276,7 @@ mount_fuji = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3230,7 +3308,7 @@ mount_fuji = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3248,7 +3326,7 @@ mount_fuji = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			monthly_karma = 0.1  #(buddhist)
+			yearly_karma_decay = 0.1  #(buddhist)
 			prestige = 0.5
 		}
 
@@ -3378,6 +3456,7 @@ tenochtitlan = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			yearly_doom_reduction = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -3393,7 +3472,7 @@ tenochtitlan = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3409,6 +3488,7 @@ tenochtitlan = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			yearly_doom_reduction = 2
 		}
 
 		#what effects happen when this tier is achieved
@@ -3424,7 +3504,7 @@ tenochtitlan = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3441,6 +3521,7 @@ tenochtitlan = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			yearly_doom_reduction = 3
 		}
 
 		#what effects happen when this tier is achieved
@@ -3577,7 +3658,7 @@ notre_dame_cathedral = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3609,7 +3690,7 @@ notre_dame_cathedral = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3797,7 +3878,7 @@ shwedagon_pagoda = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3813,15 +3894,11 @@ shwedagon_pagoda = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			church_loyalty_modifier = 0.05
-			monthly_karma = 0.05
+			yearly_karma_decay = 0.05
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 10
-			}
 		}
 	}
 
@@ -3833,7 +3910,7 @@ shwedagon_pagoda = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3848,15 +3925,17 @@ shwedagon_pagoda = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			monthly_karma = 0.1
+			yearly_karma_decay = 0.1
 			church_loyalty_modifier = 0.1
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -3997,7 +4076,7 @@ the_great_wall_of_china = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4030,7 +4109,7 @@ the_great_wall_of_china = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4164,13 +4243,16 @@ ambras_castle = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			prestige = 0.1
+			drill_gain_modifier = 0.1
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -4183,7 +4265,7 @@ ambras_castle = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4199,13 +4281,16 @@ ambras_castle = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			prestige = 0.25
+			drill_gain_modifier = 0.3
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 10
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
 			}
 		}
 	}
@@ -4218,7 +4303,7 @@ ambras_castle = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4239,9 +4324,11 @@ ambras_castle = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {	
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -4374,7 +4461,7 @@ mesa_verde = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4406,7 +4493,7 @@ mesa_verde = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4558,7 +4645,7 @@ taj_mahal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4574,6 +4661,7 @@ taj_mahal = {
 		country_modifiers = {	
 			monthly_piety = 0.002
 			prestige_decay = -0.005
+			monthly_splendor = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -4589,7 +4677,7 @@ taj_mahal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4605,7 +4693,7 @@ taj_mahal = {
 		country_modifiers = {
 			monthly_piety = 0.003
 			prestige_decay = -0.01
-			prestige = 0.5
+			monthly_splendor = 2
 			power_projection_from_insults = 1
 		}
 
@@ -4765,7 +4853,7 @@ alhambra = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4796,7 +4884,7 @@ alhambra = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4944,7 +5032,7 @@ the_grand_palace = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -4976,7 +5064,7 @@ the_grand_palace = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5147,7 +5235,7 @@ bagan_temples = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			monthly_karma = 0.1
+			yearly_karma_decay = 0.05
 			global_missionary_strength = 0.01
 		}
 
@@ -5164,7 +5252,7 @@ bagan_temples = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5179,7 +5267,7 @@ bagan_temples = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			# Removed the missionary
-			monthly_karma = 0.15
+			yearly_karma_decay = 0.1
 			global_missionary_strength = 0.01
 		}
 
@@ -5196,7 +5284,7 @@ bagan_temples = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5211,7 +5299,7 @@ bagan_temples = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			# Reduced missionaries from 2 to 1
-			monthly_karma = 0.2
+			yearly_karma_decay = 0.15
 			global_missionary_strength = 0.02
 			missionaries = 1
 		}
@@ -5345,7 +5433,7 @@ ait_benhaddou = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5377,7 +5465,7 @@ ait_benhaddou = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5513,6 +5601,7 @@ registan_square = {
 		country_modifiers = {
 			monthly_piety = 0.001
 			stability_cost_modifier = -0.1
+			enforce_religion_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -5528,7 +5617,7 @@ registan_square = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5559,7 +5648,7 @@ registan_square = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5576,6 +5665,7 @@ registan_square = {
 			monthly_piety = 0.003
 			stability_cost_modifier = -0.25
 			warscore_cost_vs_other_religion = -0.1
+			enforce_religion_cost = -0.15
 		}
 
 		#what effects happen when this tier is achieved
@@ -5710,7 +5800,7 @@ golden_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5742,7 +5832,7 @@ golden_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5930,7 +6020,7 @@ jokhang_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -5961,7 +6051,7 @@ jokhang_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6152,6 +6242,7 @@ borobudur_temple = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			culture_conversion_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -6167,7 +6258,7 @@ borobudur_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6198,7 +6289,7 @@ borobudur_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6206,8 +6297,7 @@ borobudur_temple = {
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
-		area_modifier = {
-			local_autonomy = -0.05
+		area_modifier = {			
 		}
 
 		#what modifiers are added to the country when we have this project here on this tier
@@ -6215,6 +6305,7 @@ borobudur_temple = {
 			# Nerfed from 25% to 10%
 			culture_conversion_cost = -0.1
 			num_accepted_cultures = 1
+			global_autonomy = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -6338,9 +6429,11 @@ temple_of_confucius = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
 			}
 		}
 	}
@@ -6353,7 +6446,7 @@ temple_of_confucius = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6373,10 +6466,6 @@ temple_of_confucius = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 10
-			}
 		}
 	}
 
@@ -6388,7 +6477,7 @@ temple_of_confucius = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6408,9 +6497,11 @@ temple_of_confucius = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {	
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 15
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
 			}
 		}
 	}
@@ -6539,7 +6630,7 @@ murud_janjira = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6569,7 +6660,7 @@ murud_janjira = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6719,7 +6810,7 @@ pura_besakih = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6750,7 +6841,7 @@ pura_besakih = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6898,7 +6989,7 @@ kanbawzathadi_palace = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6911,8 +7002,9 @@ kanbawzathadi_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			# Removed dip upkeep, nerfed dip advisor cost from 20% to 10%
+			# Nerfed the dip advisor cost from 20% to 10%
 			diplomatic_reputation = 1
+			diplomatic_upkeep = 1
 			dip_advisor_cost = -0.1
 		}
 
@@ -6929,7 +7021,7 @@ kanbawzathadi_palace = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -6942,7 +7034,7 @@ kanbawzathadi_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			# Nerfed dip rep and upkeep, changed advisor cost to dip specific
+			# Nerfed dip upkeep, changed advisor cost to dip specific
 			diplomatic_reputation = 1
 			diplomatic_upkeep = 1
 			dip_advisor_cost = -0.2
@@ -6990,8 +7082,11 @@ pyramid_of_cheops = {
 			}
 			AND = {
 				culture = al_misr_arabic
-				has_owner_culture = yes					
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
 				}
+			}
 		}
 	}
 
@@ -7014,8 +7109,11 @@ pyramid_of_cheops = {
 			}
 			AND = {
 				culture = al_misr_arabic
-				has_owner_culture = yes					
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
 				}
+			}
 		}
 	}
 
@@ -7028,8 +7126,11 @@ pyramid_of_cheops = {
 			}
 			AND = {
 				culture = al_misr_arabic
-				has_owner_culture = yes					
+				OR = {
+					has_owner_culture = yes
+					has_owner_accepted_culture = yes
 				}
+			}
 		}
 	}
 
@@ -7104,7 +7205,7 @@ pyramid_of_cheops = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7136,7 +7237,7 @@ pyramid_of_cheops = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7268,6 +7369,7 @@ khami_ruins = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			fabricate_claims_cost = -0.1
 		}
 
 		#what effects happen when this tier is achieved
@@ -7283,7 +7385,7 @@ khami_ruins = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7299,6 +7401,7 @@ khami_ruins = {
 		country_modifiers = {
 			# Swapped the tech cost with the fabricate claims
 			fabricate_claims_cost = -0.25
+			fabricate_claims_cost = -0.2
 		}
 
 		#what effects happen when this tier is achieved
@@ -7314,7 +7417,7 @@ khami_ruins = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7329,7 +7432,7 @@ khami_ruins = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			technology_cost = -0.05
-			fabricate_claims_cost = -0.25
+			fabricate_claims_cost = -0.3
 		}
 
 		#what effects happen when this tier is achieved
@@ -7464,7 +7567,7 @@ prambanan_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7495,7 +7598,7 @@ prambanan_temple = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7638,7 +7741,7 @@ inukshuk = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7668,7 +7771,7 @@ inukshuk = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7818,7 +7921,7 @@ fire_temple_of_ateshgah = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7831,7 +7934,7 @@ fire_temple_of_ateshgah = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			# Nerfed fire received
+			# Nerfed fire received and discipline
 			discipline = 0.025
 			fire_damage_received = -0.05
 			culture_conversion_cost = -0.05
@@ -7850,7 +7953,7 @@ fire_temple_of_ateshgah = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -7863,7 +7966,7 @@ fire_temple_of_ateshgah = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			# Removed the fire damage
+			# Removed the fire damage and nerfed the discipline
 			discipline = 0.05
 			fire_damage_received = -0.1
 			culture_conversion_cost = -0.1
@@ -8000,7 +8103,7 @@ kiev_pechersk_lavra = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8030,7 +8133,7 @@ kiev_pechersk_lavra = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8050,20 +8153,216 @@ kiev_pechersk_lavra = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {	
-			add_estate_loyalty = {
-				estate = estate_church
-				loyalty = 5
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
 			}
 		}
 	}
 }
 
-pena_palace = {
+#pena_palace = { #Replaced by Belém Tower, as requested by community
+	# province it starts in
+	# start = 227
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	# date = 1444.01.01 #1493 monastery
+	
+	#time to build
+	# time = {
+	# 	months = 0
+	# }
+	
+	#how much to build one
+	# build_cost = 0
+	
+	#can we move it?
+	# can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	# move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	# starting_tier = 0
+	
+	#project type
+	# type = monument
+
+	#can we build it?
+	# build_trigger = {
+	# 	#anyone
+	# }
+
+	#what to do when it's built
+	# on_built = {
+	# 	show_ambient_object = pena_palace 
+	# }
+	
+	#what to do when it's destroyed
+	# on_destroyed = {
+	# 	hide_ambient_object = pena_palace 
+	# }
+
+	#can our country use it?
+	# can_use_modifiers_trigger = {
+	# 	#anyone
+	# }
+
+	#can our country upgrade it?
+	# can_upgrade_trigger = {
+	# 	#anyone
+	# }
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	# keep_trigger = {
+	# }
+
+	#tier data
+	# tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		# upgrade_time = {
+		# 	months = 0
+		# }
+
+		#cost to upgrade to this level (0 for tier 0)
+		# cost_to_upgrade = {
+		# 	factor = 0
+		# }
+
+		#what modifiers are added to the province when we have this project here on this tier
+		# province_modifiers = {
+		# }
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		# area_modifier = {
+		# }
+
+		#what modifiers are added to the country when we have this project here on this tier
+		# country_modifiers = {
+		# }
+
+		#what effects happen when this tier is achieved
+		# on_upgraded = {
+			
+		# }
+	# }
+
+	# tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		# upgrade_time = {
+		# 	months = 120
+		# }
+
+		#cost to upgrade to this level (0 for tier 0)
+		# cost_to_upgrade = {
+		# 	factor = 1000
+		# }
+
+		#what modifiers are added to the province when we have this project here on this tier
+		# province_modifiers = {
+		# 	local_manpower_modifier = 0.15
+		# }
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		# area_modifier = {
+		# }
+
+		#what modifiers are added to the country when we have this project here on this tier
+		# country_modifiers = {
+		# }
+
+		#what effects happen when this tier is achieved
+		# on_upgraded = {
+		# 	owner = {
+		# 		add_estate_loyalty = {
+		# 			estate = estate_nobles
+		# 			loyalty = 5
+		# 		}
+		# 	}
+		# }
+	# }
+
+	#tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		# upgrade_time = {
+		# 	months = 240
+		# }
+
+		#cost to upgrade to this level (0 for tier 0)
+		# cost_to_upgrade = {
+		# 	factor = 2500
+		# }
+
+		#what modifiers are added to the province when we have this project here on this tier
+		# province_modifiers = {
+		# }
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		# area_modifier = {
+		# 	local_manpower_modifier = 0.25
+		# }
+
+		#what modifiers are added to the country when we have this project here on this tier
+		# country_modifiers = {
+		# }
+
+		#what effects happen when this tier is achieved
+		# on_upgraded = {
+		# 	owner = {
+		# 		add_estate_loyalty = {
+		# 			estate = estate_nobles
+		# 			loyalty = 10
+		# 		}
+		# 	}
+		# }
+	# }
+
+	# tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		# upgrade_time = {
+		# 	months = 480
+		# }
+
+		#cost to upgrade to this level (0 for tier 0)
+		# cost_to_upgrade = {
+		# 	factor = 5000
+		# }
+
+		#what modifiers are added to the province when we have this project here on this tier
+		# province_modifiers = {
+		# }
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		# area_modifier = {
+		# 	local_manpower_modifier = 0.5
+		# }
+
+		#what modifiers are added to the country when we have this project here on this tier
+		# country_modifiers = {
+		# 	global_missionary_strength = 0.005
+		# 	nobles_loyalty_modifier = 0.05
+		# }
+
+		#what effects happen when this tier is achieved
+		# on_upgraded = {	
+		# 	owner = {
+		# 		add_estate_loyalty = {
+		# 			estate = estate_nobles
+		# 			loyalty = 15
+		# 		}
+		# 	}
+		# }
+	# }
+# }
+
+belem_tower = {
 	# province it starts in
 	start = 227
 	
 	# date built in real life (so anything built during game time will be there if you start a game after that date)
-	date = 1444.01.01 #1493 monastery
+	date = 1444.01.01 #1519.01.01
 	
 	#time to build
 	time = {
@@ -8092,12 +8391,12 @@ pena_palace = {
 
 	#what to do when it's built
 	on_built = {
-		show_ambient_object = pena_palace 
+		show_ambient_object = belem_tower 
 	}
 	
 	#what to do when it's destroyed
 	on_destroyed = {
-		hide_ambient_object = pena_palace 
+		hide_ambient_object = belem_tower 
 	}
 
 	#can our country use it?
@@ -8157,23 +8456,21 @@ pena_palace = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
-			local_manpower_modifier = 0.15
+			province_trade_power_value = 5
 		}
-
+		
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
 		area_modifier = {
+			local_manpower_modifier = 0.15
 		}
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			global_trade_power = 0.05
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 5
-			}
 		}
 	}
 
@@ -8185,11 +8482,12 @@ pena_palace = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			province_trade_power_value = 10
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -8199,14 +8497,12 @@ pena_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			global_trade_power = 0.1
+			global_sailors_modifier = 0.1
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 10
-			}
 		}
 	}
 
@@ -8218,11 +8514,12 @@ pena_palace = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			province_trade_power_value = 15
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -8232,16 +8529,12 @@ pena_palace = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			global_missionary_strength = 0.005
-			nobles_loyalty_modifier = 0.05
+			global_trade_power = 0.15
+			global_sailors_modifier = 0.25
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {	
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 15
-			}
+		on_upgraded = {
 		}
 	}
 }
@@ -8370,7 +8663,7 @@ sankin_kotai_palaces = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8401,7 +8694,7 @@ sankin_kotai_palaces = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8549,7 +8842,7 @@ mausoleum_at_halicarnassus = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8579,7 +8872,7 @@ mausoleum_at_halicarnassus = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8727,7 +9020,7 @@ heddal_stave_church = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8759,7 +9052,7 @@ heddal_stave_church = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8815,8 +9108,8 @@ versailles = {
 	build_trigger = {
 		culture_group = french
 		OR = {
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
 		}
 	}
 
@@ -8920,7 +9213,7 @@ versailles = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 3500
+			factor = 2500
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8933,7 +9226,9 @@ versailles = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			global_tax_modifier = 0.2
+			nobles_loyalty_modifier = 0.05
+			nobles_influence_modifier = 0.05
+			global_tax_modifier = 0.15
 			improve_relation_modifier = 0.1
 			vassal_income = 0.1
 		}
@@ -8951,7 +9246,7 @@ versailles = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 7000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -8960,18 +9255,1209 @@ versailles = {
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
 		area_modifier = {
-			local_unrest = 1
 		}
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			global_tax_modifier = 0.25
+			nobles_loyalty_modifier = 0.1
+			nobles_influence_modifier = 0.1
+			global_tax_modifier = 0.2
 			improve_relation_modifier = 0.15
 			vassal_income = 0.2
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {	
+		}
+	}
+}
+
+el_escorial = {
+	# province it starts in
+	start = 217
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	date = 1444.01.01 #1584.01.01
+	
+	#time to build
+	time = {
+		months = 0
+	}
+	
+	#how much to build one
+	build_cost = 0
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 0
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		culture_group = iberian
+		OR = {
+				has_owner_culture = yes
+				has_owner_accepted_culture = yes
+		}
+	}
+
+	#what to do when it's built
+	on_built = {
+		show_ambient_object = el_escorial
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+		hide_ambient_object = el_escorial 
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+		culture_group = iberian
+		OR = {
+				has_owner_culture = yes
+				has_owner_accepted_culture = yes
+		}
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+		culture_group = iberian
+		OR = {
+				has_owner_culture = yes
+				has_owner_accepted_culture = yes
+		}
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 0
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {			
+		}
+		
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {			
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			global_autonomy = -0.01	
+			global_tariffs = 0.05
+			treasure_fleet_income = 0.05			
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			global_autonomy = -0.025
+			governing_capacity_modifier = 0.05
+			global_tariffs = 0.1
+			treasure_fleet_income = 0.1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			global_autonomy = -0.05
+			governing_capacity_modifier = 0.1
+			global_tariffs = 0.2
+			treasure_fleet_income = 0.2
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+}
+
+potosi = {
+	# province it starts in
+	start = 795
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	date = 1444.01.01 #1545.01.01 #Date the silver mine started to be exploited
+	
+	#time to build
+	time = {
+		months = 0
+	}
+	
+	#how much to build one
+	build_cost = 0
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 0
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		#anyone
+	}
+
+	#what to do when it's built
+	on_built = {
+		show_ambient_object = potosi 
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+		hide_ambient_object = potosi 
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+		#anyone
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+		#anyone
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 0
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+			trade_goods_size = 1.0
+		}
+		
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+			trade_goods_size_modifier = 0.05
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			interest = -0.25
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+			trade_goods_size = 2.0
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+			trade_goods_size_modifier = 0.1
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			interest = -0.5
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+			trade_goods_size = 3.0
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+			trade_goods_size_modifier = 0.2
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			interest = -1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+}
+
+kaaba = {
+	# province it starts in
+	start = 385
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	date = 1444.01.01 #630.01.01 #Muhammad securing Mecca and removing statues and images from Kaaba
+	
+	#time to build
+	time = {
+		months = 0
+	}
+	
+	#how much to build one
+	build_cost = 0
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 2
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		religion_group = muslim
+		has_owner_religion = yes
+	}
+
+	#what to do when it's built
+	on_built = {
+		show_ambient_object = kaaba 
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+		hide_ambient_object = kaaba 
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+		religion_group = muslim
+		has_owner_religion = yes
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+		religion_group = muslim
+		has_owner_religion = yes
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 0
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {			
+		}
+		
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			prestige = 0.1
+			religious_unity = 0.1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			prestige = 0.25
+			religious_unity = 0.15
+			warscore_cost_vs_other_religion = -0.05
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			prestige = 0.5
+			religious_unity = 0.2
+			warscore_cost_vs_other_religion = -0.1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+}
+
+holy_city_jerusalem = {
+	# province it starts in
+	start = 379
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	date = 1444.01.01 #957.01.01 BC #Supposed construction date of the Temple of Salomon 
+	
+	#time to build
+	time = {
+		months = 0
+	}
+	
+	#how much to build one
+	build_cost = 0
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 2
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		OR = {
+			AND = {
+				religion_group = muslim
+				has_owner_religion = yes
+			}
+			AND = {
+				religion_group = christian
+				has_owner_religion = yes
+			}
+			AND = {
+				religion = jewish
+				has_owner_religion = yes
+			}
+		}
+	}
+
+	#what to do when it's built
+	on_built = {
+		show_ambient_object = holy_city_jerusalem 
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+		hide_ambient_object = holy_city_jerusalem
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+		OR = {
+			AND = {
+				religion_group = muslim
+				has_owner_religion = yes
+			}
+			AND = {
+				religion_group = christian
+				has_owner_religion = yes
+			}
+			AND = {
+				religion = jewish
+				has_owner_religion = yes
+			}
+		}
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+		OR = {
+			AND = {
+				religion_group = muslim
+				has_owner_religion = yes
+			}
+			AND = {
+				religion_group = christian
+				has_owner_religion = yes
+			}
+			AND = {
+				religion = jewish
+				has_owner_religion = yes
+			}
+		}
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 0
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+		
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+			local_missionary_strength = 0.01
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			prestige = 0.1
+			global_heretic_missionary_strength = 0.01
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+			local_missionary_strength = 0.02
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			prestige = 0.25
+			global_heretic_missionary_strength = 0.02
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+			local_missionary_strength = 0.03
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			prestige = 0.5
+			global_heretic_missionary_strength = 0.03
+			missionaries = 1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+}
+
+great_mosque_djenne = {
+	# province it starts in
+	start = 1134
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	date = 1444.01.01 #1300.01.01 #Unknown, c. 1200-1330
+	
+	#time to build
+	time = {
+		months = 0
+	}
+	
+	#how much to build one
+	build_cost = 0
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 1
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		religion_group = muslim
+		has_owner_religion = yes
+	}
+
+	#what to do when it's built
+	on_built = {
+		show_ambient_object = great_mosque_djenne
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+		hide_ambient_object = great_mosque_djenne 
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+		religion_group = muslim
+		has_owner_religion = yes
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+		religion_group = muslim
+		has_owner_religion = yes
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 0
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+		
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			monthly_piety = 0.001
+			global_heathen_missionary_strength = 0.01
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			monthly_piety = 0.002
+			global_heathen_missionary_strength = 0.02
+			missionaries = 1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			monthly_piety = 0.003
+			global_heathen_missionary_strength = 0.03
+			missionaries = 1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+}
+
+imperial_city_hue = {
+	# province it starts in
+	start = 2373
+	
+	# date built in real life (so anything built during game time will be there if you start a game after that date)
+	date = 1444.01.01 #1804.01.01
+	
+	#time to build
+	time = {
+		months = 0
+	}
+	
+	#how much to build one
+	build_cost = 0
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 1
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 0
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		OR = {
+			AND = { 
+				religion = buddhism
+				has_owner_religion = yes 
+			}
+			AND = { 
+				religion = vajrayana
+				has_owner_religion = yes 
+			}
+			AND = { 
+				religion = mahayana
+				has_owner_religion = yes 
+			}
+			owner = {
+				religion = confucianism
+			}
+		}
+	}
+
+	#what to do when it's built
+	on_built = {
+		show_ambient_object = imperial_city_hue
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+		hide_ambient_object = imperial_city_hue
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+		OR = {
+			AND = { 
+				religion = buddhism
+				has_owner_religion = yes 
+			}
+			AND = { 
+				religion = vajrayana
+				has_owner_religion = yes 
+			}
+			AND = { 
+				religion = mahayana
+				has_owner_religion = yes 
+			}
+			owner = {
+				religion = confucianism
+			}
+		}
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+		OR = {
+			AND = { 
+				religion = buddhism
+				has_owner_religion = yes 
+			}
+			AND = { 
+				religion = vajrayana
+				has_owner_religion = yes 
+			}
+			AND = { 
+				religion = mahayana
+				has_owner_religion = yes 
+			}
+			owner = {
+				religion = confucianism
+			}
+		}
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 0
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+		
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			yearly_harmony = 0.25
+			legitimacy = 0.5
+			state_maintenance_modifier = -0.1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			yearly_harmony = 0.33
+			yearly_karma_decay = 0.01
+			legitimacy = 1
+			state_maintenance_modifier = -0.2
+			min_autonomy_in_territories = -0.05
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			yearly_harmony = 0.5
+			yearly_karma_decay = 0.015
+			legitimacy = 1
+			state_maintenance_modifier = -0.25
+			min_autonomy_in_territories = -0.1
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
 		}
 	}
 }

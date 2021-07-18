@@ -22,6 +22,7 @@ estate_dhimmi = {
 		NOT = { has_reform = siberian_tribe }
 		is_nomad = no
 		religion_group = muslim
+		NOT = { technology_group = western }
 	}
 
 	# These scale with loyalty & power

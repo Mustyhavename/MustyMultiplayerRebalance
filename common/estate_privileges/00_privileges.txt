@@ -45,7 +45,7 @@ estate_brahmins_land_rights = {
 		}
 		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -70,8 +70,122 @@ estate_brahmins_land_rights = {
 			NOT = { has_estate_privilege = estate_brahmins_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_brahmins_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_brahmins_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -117,8 +231,22 @@ estate_nobles_land_rights = {
 			NOT = { has_estate_privilege = estate_nobles_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_nobles_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_nobles_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -145,6 +273,106 @@ estate_nobles_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -191,7 +419,21 @@ estate_church_land_rights = {
 		}
 		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_church_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_church_land_rights
+				}
+			}
 		}
 		modifier = {
 			factor = 0.8
@@ -218,6 +460,106 @@ estate_church_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -263,8 +605,22 @@ estate_maratha_land_rights = {
 			NOT = { has_estate_privilege = estate_maratha_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_maratha_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_maratha_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -291,6 +647,106 @@ estate_maratha_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -336,8 +792,22 @@ estate_burghers_land_rights = {
 			NOT = { has_estate_privilege = estate_burghers_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_burghers_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_burghers_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -364,6 +834,106 @@ estate_burghers_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -409,8 +979,22 @@ estate_vaisyas_land_rights = {
 			NOT = { has_estate_privilege = estate_vaisyas_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_vaisyas_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_vaisyas_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -437,6 +1021,106 @@ estate_vaisyas_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -482,8 +1166,22 @@ estate_cossacks_land_rights = {
 			NOT = { has_estate_privilege = estate_cossacks_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_cossacks_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_cossacks_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -510,6 +1208,106 @@ estate_cossacks_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -555,8 +1353,22 @@ estate_nomadic_tribes_land_rights = {
 			NOT = { has_estate_privilege = estate_nomadic_tribes_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_nomadic_tribes_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_nomadic_tribes_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -583,6 +1395,106 @@ estate_nomadic_tribes_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -628,8 +1540,22 @@ estate_dhimmi_land_rights = {
 			NOT = { has_estate_privilege = estate_dhimmi_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_dhimmi_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_dhimmi_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -656,6 +1582,106 @@ estate_dhimmi_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -701,8 +1727,22 @@ estate_jains_land_rights = {
 			NOT = { has_estate_privilege = estate_jains_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_jains_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_jains_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -729,6 +1769,106 @@ estate_jains_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
 		}
 	}
 }
@@ -774,8 +1914,22 @@ estate_rajput_land_rights = {
 			NOT = { has_estate_privilege = estate_rajput_land_rights }
 		}
 		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_rajput_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_rajput_land_rights
+				}
+			}
+		}
+		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
 		}
 		modifier = {
 			factor = 0.8
@@ -802,6 +1956,106 @@ estate_rajput_land_rights = {
 		modifier = {
 			factor = 0.8
 			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
 		}
 	}
 }
@@ -6964,7 +8218,7 @@ estate_church_karma_temples = {
 		OR = {
 			religion = buddhism
 			religion = mahayana
-			religion = theravada
+			religion = vajrayana
 		}
 	}
 	can_select = {
