@@ -9422,8 +9422,8 @@ el_escorial = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed governing capacity modifier
 			global_autonomy = -0.025
-			governing_capacity_modifier = 0.05
 			global_tariffs = 0.1
 			treasure_fleet_income = 0.1
 		}
@@ -9454,8 +9454,8 @@ el_escorial = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# Removed governing capacity modifier
 			global_autonomy = -0.05
-			governing_capacity_modifier = 0.1
 			global_tariffs = 0.2
 			treasure_fleet_income = 0.2
 		}
@@ -9637,7 +9637,8 @@ potosi = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			interest = -1
+			# Nerfed the interest slightly
+			interest = -0.75
 		}
 
 		#what effects happen when this tier is achieved
@@ -9756,8 +9757,8 @@ kaaba = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			prestige = 0.1
-			religious_unity = 0.1
+			# removed religious unity and buffed prestige
+			prestige = 0.25
 		}
 
 		#what effects happen when this tier is achieved
@@ -9786,8 +9787,8 @@ kaaba = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# removed religious unity
 			prestige = 0.25
-			religious_unity = 0.15
 			warscore_cost_vs_other_religion = -0.05
 		}
 
@@ -9817,8 +9818,8 @@ kaaba = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# removed religious unity
 			prestige = 0.5
-			religious_unity = 0.2
 			warscore_cost_vs_other_religion = -0.1
 		}
 
@@ -10416,6 +10417,7 @@ imperial_city_hue = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# removed the min autonomy in territories
 			yearly_harmony = 0.33
 			yearly_karma_decay = 0.01
 			legitimacy = 1
@@ -10449,11 +10451,12 @@ imperial_city_hue = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			# halved the min autonomy in territories
 			yearly_harmony = 0.5
 			yearly_karma_decay = 0.015
 			legitimacy = 1
 			state_maintenance_modifier = -0.25
-			min_autonomy_in_territories = -0.1
+			min_autonomy_in_territories = -0.05
 		}
 
 		#what effects happen when this tier is achieved
