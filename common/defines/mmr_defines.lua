@@ -16,3 +16,12 @@ NDefines.NCountry.PS_REPLACE_RIVAL = 50
 
 -- Increased scorched earth cost from 5 to 10 as it's now stronger than it was.
 NDefines.NCountry.PS_SCORCH_EARTH = 10
+
+-- Increased the maximum pillage from 2 (per category) to 50 (which means massive capitals can be affected meaningfully).
+NDefines.NCountry.PILLAGE_CAPITAL_MAX_DEV_PILLAGED = 50
+
+-- Nerfed concentrate / pillage from 20% of dev to 10% of dev
+-- Should be noted that how this works is it takes the dev of each province in each state and multiplies it by this number, which it rounds to the nearest integer.
+-- The 10% figure means that [1,4] is unaffected, [5,14] pillages one, [15,24] pillages two, etc...
+NDefines.NCountry.CONCENTRATE_DEVELOPMENT_DEVELOPMENT_DECREASE = 0.1
+NDefines.NCountry.PILLAGE_CAPITAL_DEVELOPMENT_DECREASE = 0.1
