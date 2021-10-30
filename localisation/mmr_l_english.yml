@@ -103,3 +103,7 @@
  mmr_insult_german_tech:0 "YOU UTTER FOOL! GERMAN SCIENCE IS THE WORLD'S FINEST!"
  mmr_insult_french_taunting:0 "You empty-headed animal food-trough wiper! I fart in your general direction! Your mother was a hamster, and your father smelt of elderberries!"
  mmr_insult_italian_sides:0 "So... planning to change sides in this one?"
+ # New Casus Belli / War Goals
+ cb_mmr_savages:0 "Conquest of Savages"
+ cb_mmr_savages_desc:0 "Savages! Savages! Barely even human!"
+ MMR_SAVAGES_WAR_NAME:0 "$ORDER$$FIRST$ Extermination of $SECOND_NAME$"
