@@ -21,10 +21,20 @@ cb_mmr_savages = {
 			full_idea_group = exploration_ideas
 			full_idea_group = expansion_ideas
 		}
+		NOT = {
+			government = tribal
+		}
+		NOT = {
+			government = native
+		}
+		has_institution = feudalism
 		FROM = {
 			OR = {
 				government = tribal
 				government = native
+				NOT = {
+					has_institution = feudalism
+				}
 			}
 		}
 	}
