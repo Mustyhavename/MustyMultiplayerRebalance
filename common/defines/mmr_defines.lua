@@ -14,9 +14,6 @@ NDefines.NDiplomacy.MIN_RELATIONS_TO_ALLY = -200
 -- Decreased the change rival cost down from 100 to 50.
 NDefines.NCountry.PS_REPLACE_RIVAL = 50
 
--- Increased scorched earth cost from 5 to 10 as it's now stronger than it was.
-NDefines.NCountry.PS_SCORCH_EARTH = 10
-
 -- Increased the maximum pillage from 2 (per category) to 50 (which means massive capitals can be affected meaningfully).
 NDefines.NCountry.PILLAGE_CAPITAL_MAX_DEV_PILLAGED = 50
 
