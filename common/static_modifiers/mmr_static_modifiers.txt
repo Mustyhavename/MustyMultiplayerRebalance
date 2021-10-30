@@ -15,15 +15,6 @@ patriarch_authority_local = {
 	local_manpower_modifier = 0.20
 }
 
-# Make scorching now give attrition.
-# Note that adding a supply limit reduction would be nice. However, percentages are additive, and technology gives a huge percentages
-# bonus over time, so a 50% supply limit modifier only affects the base cost of a province. 
-
-scorched_earth = {
-	local_hostile_movement_speed = -0.50
-	local_hostile_attrition = 2
-}
-
 # Nerfed Prussian militarisation (because it's now easy to keep at 100%)
 # 	- 10% discipline nerfed to 5%
 #	- 20% maintenance nerfed to 10%

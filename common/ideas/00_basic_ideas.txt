@@ -477,8 +477,8 @@ defensive_ideas = {
 		leader_land_manuever = 2
 	}
 	mmr_defensive_tactics = {
-		# Was a land maintenance reduction, now the attrition which was a bonus, up from 1% to 2%.
-		hostile_attrition = 2
+		# Was a land maintenance reduction, now the attrition which used to be the bonus
+		hostile_attrition = 1
 	}
 	defensive_mentality = {
 		# Buffed the maintenance from 10% to 20%

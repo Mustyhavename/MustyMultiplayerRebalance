@@ -1,0 +1,34 @@
+# INSTRUCTIONS:
+# -------------
+# is_triggered_only - Triggered from within the code or by event effects.
+# months - The number of months this CB will be valid. Only works for triggered CBs.
+# prerequisites - A condition that automatically activates a CB. Does not work for triggered CBs.
+# no_opinion_hit - If yes you get no negative opinion from this
+#
+# ROOT = attacker
+# FROM = target
+#
+# NOTE: The order in which the peace options are listed is the order in which the AI will normally prioritize them in peace treaties
+#
+# TRIGGERED - Triggered from within the code or by event effects
+# --------------------------------------------------------------
+
+# Wargoal for colonisers to be able to just unilateraly declare on natives.
+cb_mmr_savages = {
+
+	prerequisites = {
+		OR = {
+			full_idea_group = exploration_ideas
+			full_idea_group = expansion_ideas
+		}
+		FROM = {
+			OR = {
+				government = tribal
+				government = native
+			}
+		}
+	}
+
+	war_goal = take_capital_mmr_savages
+}
+

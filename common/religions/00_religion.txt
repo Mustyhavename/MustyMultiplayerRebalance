@@ -541,9 +541,9 @@ christian = {
 			catholic
 		}
 		country = {
-			# Buffed the +1 advisor to 10% goods produced
-			tolerance_heretic = 2
-			global_trade_goods_size_modifier = 0.1
+			# Swapped out -1 unrest for 10% advisor cost
+			advisor_cost = -0.1
+			advisor_pool = 1
 		}
 		
 		country_as_secondary = {
